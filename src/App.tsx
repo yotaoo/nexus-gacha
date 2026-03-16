@@ -11,6 +11,7 @@ const HomePage = lazy(() => import('@/features/shared/pages/HomePage'))
 const NewsPage = lazy(() => import('@/features/shared/pages/NewsPage'))
 const CodesPage = lazy(() => import('@/features/shared/pages/CodesPage'))
 const PlayerLookupPage = lazy(() => import('@/features/shared/pages/PlayerLookupPage'))
+const LoginPage = lazy(() => import('@/features/shared/pages/LoginPage'))
 
 // Genshin
 const GenshinCharactersPage = lazy(() => import('@/features/genshin/pages/GenshinCharactersPage'))
@@ -41,6 +42,7 @@ function AppRoutes() {
         <Route path="/" element={<HomePage />} />
         <Route path="/actualites" element={<NewsPage />} />
         <Route path="/joueur" element={<PlayerLookupPage />} />
+        <Route path="/connexion" element={<LoginPage />} />
 
         {/* Genshin */}
         <Route path="/genshin" element={<Navigate to="/genshin/personnages" replace />} />

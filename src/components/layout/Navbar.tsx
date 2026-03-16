@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Search, User } from 'lucide-react'
+import { useAuth } from '@/contexts/AuthContext'
 import { useGame } from '@/contexts/GameContext'
 import { getNavLinks } from '@/utils/gameRegistry'
 import { cn } from '@/utils/cn'
@@ -9,6 +10,7 @@ import MobileMenu from './MobileMenu'
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { user } = useAuth()
   const { currentGame } = useGame()
   const location = useLocation()
   const navLinks = getNavLinks(currentGame)
@@ -41,9 +43,13 @@ export default function Navbar() {
               <Link
                 to="/connexion"
                 className="p-2 hover:bg-manga-paper rounded transition-colors"
-                title="Connexion"
+                title={user ? 'Mon profil' : 'Connexion'}
               >
-                <User size={20} />
+                {user?.photoURL ? (
+                  <img src={user.photoURL} alt="" className="w-6 h-6 rounded-full border-2 border-manga-ink" />
+                ) : (
+                  <User size={20} />
+                )}
               </Link>
               <button
                 onClick={() => setMobileOpen(true)}
