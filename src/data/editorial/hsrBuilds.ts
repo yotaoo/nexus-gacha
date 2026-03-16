@@ -11,8 +11,8 @@ export const HSR_BUILDS: HsrCharacterBuild[] = [
       { id: '21019', name: 'Un soupir de bonheur', rarity: 4, note: 'Bon F2P' },
     ],
     relicSets: [
-      { sets: [{ name: 'Musketeer of Wild Wheat', pieces: 4 }], note: 'BiS pour buff ATQ' },
-      { sets: [{ name: 'Prisoner in Deep Confinement', pieces: 2 }, { name: 'Musketeer of Wild Wheat', pieces: 2 }] },
+      { sets: [{ id: '102', name: 'Mousquetaire du ble sauvage', pieces: 4, icon: '71001' }], note: 'BiS pour buff ATQ' },
+      { sets: [{ id: '116', name: 'Prisonnier enchaine', pieces: 2, icon: '71015' }, { id: '102', name: 'Mousquetaire du ble sauvage', pieces: 2, icon: '71001' }] },
     ],
     mainStats: { body: 'ATQ%', feet: 'Vitesse', sphere: 'ATQ%', rope: 'Recharge d\'energie' },
     subStats: ['ATQ%', 'ATQ', 'Vitesse', 'Recharge d\'energie'],
@@ -27,8 +27,8 @@ export const HSR_BUILDS: HsrCharacterBuild[] = [
       { id: '21019', name: 'Un soupir de bonheur', rarity: 4 },
     ],
     relicSets: [
-      { sets: [{ name: 'Thief of Shooting Meteor', pieces: 4 }], note: 'Pour la RE' },
-      { sets: [{ name: 'Messenger Traversing Hackerspace', pieces: 4 }], note: 'Alternative speed' },
+      { sets: [{ id: '111', name: 'Voleur de meteorite filante', pieces: 4, icon: '71010' }], note: 'Pour la RE' },
+      { sets: [{ id: '114', name: 'Messager du hackerspace', pieces: 4, icon: '71013' }], note: 'Alternative speed' },
     ],
     mainStats: { body: 'PV%/DEF%', feet: 'Vitesse', sphere: 'PV%', rope: 'Recharge d\'energie' },
     subStats: ['Vitesse', 'Recharge d\'energie', 'Effet de rupture', 'PV%'],
@@ -43,7 +43,7 @@ export const HSR_BUILDS: HsrCharacterBuild[] = [
       { id: '21020', name: 'Le jour ou le cosmos est tombe', rarity: 4 },
     ],
     relicSets: [
-      { sets: [{ name: 'Champion of Streetwise Boxing', pieces: 4 }] },
+      { sets: [{ id: '105', name: 'Championne de boxe de rue', pieces: 4, icon: '71004' }] },
     ],
     mainStats: { body: 'Taux CRIT/DGT CRIT', feet: 'Vitesse/ATQ%', sphere: 'Bonus DGT Physique', rope: 'ATQ%' },
     subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Vitesse'],
@@ -58,7 +58,7 @@ export const HSR_BUILDS: HsrCharacterBuild[] = [
       { id: '21034', name: 'Worrisome, Blissful', rarity: 4 },
     ],
     relicSets: [
-      { sets: [{ name: 'Pioneer Diver of Dead Waters', pieces: 4 }], note: 'BiS' },
+      { sets: [{ id: '117', name: 'Exploratrice des abimes', pieces: 4, icon: '71016' }], note: 'BiS' },
     ],
     mainStats: { body: 'Taux CRIT/DGT CRIT', feet: 'Vitesse/ATQ%', sphere: 'Bonus DGT Imaginaire', rope: 'ATQ%' },
     subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Vitesse'],
@@ -73,7 +73,7 @@ export const HSR_BUILDS: HsrCharacterBuild[] = [
       { id: '21027', name: 'Patience eternelle', rarity: 4 },
     ],
     relicSets: [
-      { sets: [{ name: 'Firesmith of Lava-Forging', pieces: 4 }] },
+      { sets: [{ id: '107', name: 'Lave de Forgefeu', pieces: 4, icon: '71006' }] },
     ],
     mainStats: { body: 'Taux CRIT/DGT CRIT', feet: 'Vitesse', sphere: 'Bonus DGT Feu', rope: 'ATQ%' },
     subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Vitesse'],
@@ -88,7 +88,7 @@ export const HSR_BUILDS: HsrCharacterBuild[] = [
       { id: '21024', name: 'Liseuse posee', rarity: 4, note: 'Bon F2P' },
     ],
     relicSets: [
-      { sets: [{ name: 'Passerby of Wandering Cloud', pieces: 4 }], note: 'BiS healer' },
+      { sets: [{ id: '101', name: 'Vagabond foulenuage', pieces: 4, icon: '71000' }], note: 'BiS healer' },
     ],
     mainStats: { body: 'Taux de soins / PV%', feet: 'Vitesse', sphere: 'PV%', rope: 'Recharge d\'energie' },
     subStats: ['Vitesse', 'PV%', 'Recharge d\'energie', 'RES aux effets'],
@@ -103,7 +103,7 @@ export const HSR_BUILDS: HsrCharacterBuild[] = [
       { id: '21022', name: 'Engrenages du destin', rarity: 4, note: 'Bon F2P' },
     ],
     relicSets: [
-      { sets: [{ name: 'Knight of Purity Palace', pieces: 4 }], note: 'Pour le shield' },
+      { sets: [{ id: '103', name: 'Chevalier du palais de la purete', pieces: 4, icon: '71002' }], note: 'Pour le shield' },
     ],
     mainStats: { body: 'DEF%', feet: 'Vitesse/DEF%', sphere: 'DEF%', rope: 'DEF%' },
     subStats: ['DEF%', 'DEF', 'Vitesse', 'RES aux effets'],
@@ -118,7 +118,7 @@ export const HSR_BUILDS: HsrCharacterBuild[] = [
       { id: '21034', name: 'Bonne nuit et dors bien', rarity: 4, note: 'Alternative solide' },
     ],
     relicSets: [
-      { sets: [{ name: 'Pioneer Diver of Dead Waters', pieces: 4 }], note: 'BiS' },
+      { sets: [{ id: '117', name: 'Exploratrice des abimes', pieces: 4, icon: '71016' }], note: 'BiS' },
     ],
     mainStats: { body: 'Taux CRIT/DGT CRIT', feet: 'Vitesse/ATQ%', sphere: 'Bonus DGT Foudre', rope: 'ATQ%' },
     subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Vitesse'],
@@ -133,7 +133,7 @@ export const HSR_BUILDS: HsrCharacterBuild[] = [
       { id: '21019', name: 'Un soupir de bonheur', rarity: 4 },
     ],
     relicSets: [
-      { sets: [{ name: 'Messenger Traversing Hackerspace', pieces: 4 }], note: 'BiS speed' },
+      { sets: [{ id: '114', name: 'Messager du hackerspace', pieces: 4, icon: '71013' }], note: 'BiS speed' },
     ],
     mainStats: { body: 'PV%/DEF%', feet: 'Vitesse', sphere: 'PV%', rope: 'Recharge d\'energie' },
     subStats: ['Vitesse', 'Recharge d\'energie', 'PV%', 'DEF%'],
@@ -148,7 +148,7 @@ export const HSR_BUILDS: HsrCharacterBuild[] = [
       { id: '21010', name: 'Seule dans l\'univers', rarity: 4 },
     ],
     relicSets: [
-      { sets: [{ name: 'Genius of Brilliant Stars', pieces: 4 }], note: 'BiS pour ignore DEF' },
+      { sets: [{ id: '108', name: 'Genies des etoiles', pieces: 4, icon: '71007' }], note: 'BiS pour ignore DEF' },
     ],
     mainStats: { body: 'Taux CRIT/DGT CRIT', feet: 'ATQ%/Vitesse', sphere: 'Bonus DGT Quantique', rope: 'ATQ%' },
     subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Vitesse'],

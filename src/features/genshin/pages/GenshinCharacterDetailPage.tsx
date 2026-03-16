@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { ArrowLeft, Star, Sword, Shield } from 'lucide-react'
+import { ArrowLeft, Star, Sword, Shield, Package } from 'lucide-react'
 import PageLayout from '@/components/layout/PageLayout'
 import Tabs from '@/components/ui/Tabs'
 import RarityStars from '@/components/ui/RarityStars'
@@ -10,6 +10,7 @@ import { useApi } from '@/hooks/useApi'
 import {
   fetchGenshinCharacter, getGenshinCharacterGacha, getGenshinCharacterIcon,
   getGenshinElementIcon, getGenshinTalentIcon, getGenshinConstellationIcon,
+  getGenshinWeaponIcon, getGenshinArtifactIcon, getGenshinMaterialIcon,
 } from '@/services/api/genshinApi'
 import { GENSHIN_ELEMENTS } from '@/types/genshin'
 import { GENSHIN_TEAMS } from '@/data/editorial/genshinTeams'
@@ -93,8 +94,15 @@ export default function GenshinCharacterDetailPage() {
                   </div>
                   <div className="space-y-2">
                     {build.weapons.map((w, i) => (
-                      <div key={i} className="flex items-center gap-3 p-2 bg-manga-paper border border-manga-gray-light">
+                      <Link key={i} to={`/genshin/armes/${w.id}`} className="flex items-center gap-3 p-2 bg-manga-paper border border-manga-gray-light hover:shadow-manga transition-all">
                         <span className="font-heading font-bold text-xs text-manga-red w-5 flex-shrink-0">#{i + 1}</span>
+                        {w.icon && (
+                          <img
+                            src={getGenshinWeaponIcon(w.icon)}
+                            alt={w.name}
+                            className="w-10 h-10 flex-shrink-0 rounded-sm bg-manga-ink p-0.5"
+                          />
+                        )}
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2">
                             <span className="font-heading font-bold text-sm">{w.name}</span>
@@ -102,7 +110,7 @@ export default function GenshinCharacterDetailPage() {
                           </div>
                           {w.note && <p className="text-[11px] text-manga-gray">{w.note}</p>}
                         </div>
-                      </div>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -115,10 +123,18 @@ export default function GenshinCharacterDetailPage() {
                   <div className="space-y-2">
                     {build.artifacts.map((a, i) => (
                       <div key={i} className="p-2 bg-manga-paper border border-manga-gray-light">
-                        <div className="flex flex-wrap gap-1">
+                        <div className="flex flex-wrap items-center gap-2">
                           {a.sets.map((s, j) => (
-                            <span key={j} className="font-heading font-bold text-sm">
-                              {s.pieces}x {s.name}{j < a.sets.length - 1 ? ' + ' : ''}
+                            <span key={j} className="flex items-center gap-1.5">
+                              {s.icon && (
+                                <Link to={s.id ? `/genshin/artefacts/${s.id}` : '#'}>
+                                  <img src={getGenshinArtifactIcon(s.icon)} alt={s.name} className="w-8 h-8 flex-shrink-0" />
+                                </Link>
+                              )}
+                              <Link to={s.id ? `/genshin/artefacts/${s.id}` : '#'} className="font-heading font-bold text-sm hover:text-manga-red transition-colors">
+                                {s.pieces}x {s.name}
+                              </Link>
+                              {j < a.sets.length - 1 && <span className="text-manga-gray">+</span>}
                             </span>
                           ))}
                         </div>
@@ -163,6 +179,36 @@ export default function GenshinCharacterDetailPage() {
                     <p className="text-sm text-manga-gray leading-relaxed">{build.tips}</p>
                   </div>
                 )}
+              </div>
+            ),
+          }] : []),
+          // Materials tab
+          ...(char.ascensionMaterials && char.ascensionMaterials.length > 0 ? [{
+            id: 'materials',
+            label: 'Materiaux',
+            content: (
+              <div className="space-y-4">
+                <div className="manga-card p-4" onClick={undefined}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <Package size={16} className="text-manga-red" />
+                    <h3 className="font-heading font-bold text-sm uppercase">Materiaux d'elevation</h3>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                    {char.ascensionMaterials.map((mat) => (
+                      <div key={mat.id} className="flex items-center gap-2 p-2 bg-manga-paper border border-manga-gray-light">
+                        <img
+                          src={getGenshinMaterialIcon(mat.icon)}
+                          alt={mat.name}
+                          className="w-10 h-10 flex-shrink-0"
+                        />
+                        <div className="min-w-0">
+                          <p className="font-heading font-bold text-xs leading-tight truncate">{mat.name}</p>
+                          <p className="text-[10px] text-manga-gray">x{mat.count}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             ),
           }] : []),

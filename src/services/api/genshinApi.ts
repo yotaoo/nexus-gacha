@@ -1,4 +1,4 @@
-import type { GenshinCharacter, GenshinWeapon, GenshinArtifact, GenshinElement, GenshinWeaponType } from '@/types/genshin'
+import type { GenshinCharacter, GenshinWeapon, GenshinArtifact, GenshinElement, GenshinWeaponType, AscensionMaterial } from '@/types/genshin'
 import { cleanHsrDescription } from '@/utils/textCleaner'
 
 const YATTA_BASE = 'https://gi.yatta.moe/api/v2/fr'
@@ -40,6 +40,49 @@ function mapWeaponType(weaponType: string): GenshinWeaponType {
 // Clean Yatta descriptions (same color tags as HSR)
 function cleanDescription(desc: string): string {
   return cleanHsrDescription(desc)
+}
+
+// ============ MATERIALS CACHE ============
+
+let materialCache: Record<string, { name: string; icon: string; rank: number }> | null = null
+
+async function fetchMaterialList(): Promise<Record<string, { name: string; icon: string; rank: number }>> {
+  if (materialCache) return materialCache
+  const data = await fetchYatta<{ items: Record<string, any> }>('/material')
+  materialCache = {}
+  for (const [id, m] of Object.entries(data.items)) {
+    materialCache[id] = { name: m.name || '', icon: m.icon || '', rank: m.rank || 1 }
+  }
+  return materialCache
+}
+
+async function resolveAscensionMaterials(promote: any[]): Promise<AscensionMaterial[]> {
+  const materials = await fetchMaterialList()
+  const totals: Record<string, number> = {}
+  for (const level of promote) {
+    if (!level.costItems) continue
+    for (const [id, count] of Object.entries(level.costItems)) {
+      // Skip mora (id starts with 2)
+      if (id === '202') continue
+      totals[id] = (totals[id] || 0) + (count as number)
+    }
+  }
+  // Group by base material (keep highest rarity variant only for gems)
+  const result: AscensionMaterial[] = []
+  const seen = new Set<string>()
+  // Sort by rarity descending so we pick highest variant first
+  const sorted = Object.entries(totals).sort((a, b) => {
+    const matA = materials[a[0]]
+    const matB = materials[b[0]]
+    return (matB?.rank || 0) - (matA?.rank || 0)
+  })
+  for (const [id, count] of sorted) {
+    const mat = materials[id]
+    if (!mat) continue
+    // Skip low-rank variants of gems (keep rank >= 2 variants)
+    result.push({ id, name: mat.name, icon: mat.icon, rarity: mat.rank, count })
+  }
+  return result
 }
 
 // ============ CHARACTERS ============
@@ -86,6 +129,11 @@ export async function fetchGenshinCharacter(id: string): Promise<GenshinCharacte
     icon: c.icon || undefined,
   })) : []
 
+  // Ascension materials
+  const ascensionMaterials = data.upgrade?.promote
+    ? await resolveAscensionMaterials(data.upgrade.promote)
+    : []
+
   return {
     id,
     name: data.name,
@@ -100,6 +148,7 @@ export async function fetchGenshinCharacter(id: string): Promise<GenshinCharacte
     icon: data.icon,
     skillTalents: talents,
     constellations,
+    ascensionMaterials,
   }
 }
 
@@ -196,7 +245,7 @@ export function getGenshinWeaponIcon(icon?: string): string {
 }
 
 export function getGenshinArtifactIcon(icon?: string): string {
-  if (icon) return `${ENKA_ASSETS}/${icon}.png`
+  if (icon) return `${YATTA_ASSETS}/reliquary/${icon}.png`
   return ''
 }
 
@@ -213,4 +262,8 @@ export function getGenshinTalentIcon(icon?: string): string {
 export function getGenshinConstellationIcon(icon?: string): string {
   if (icon) return `${YATTA_ASSETS}/${icon}.png`
   return ''
+}
+
+export function getGenshinMaterialIcon(icon: string): string {
+  return `${YATTA_ASSETS}/${icon}.png`
 }

@@ -1,8 +1,7 @@
-import type { HsrCharacter, HsrLightCone, HsrRelic, HsrPath, HsrElement } from '@/types/hsr'
+import type { HsrCharacter, HsrLightCone, HsrRelic, HsrPath, HsrElement, HsrAscensionMaterial } from '@/types/hsr'
 import { cleanHsrDescription, cleanRelicName } from '@/utils/textCleaner'
 
 const YATTA_BASE = 'https://sr.yatta.moe/api/v2/fr'
-const YATTA_HSR_ASSETS = 'https://sr.yatta.moe/assets'
 const STARRAIL_RES = 'https://raw.githubusercontent.com/Mar-7th/StarRailRes/master'
 
 // API uses codenames, StarRailRes uses display names for paths
@@ -17,6 +16,43 @@ async function fetchYatta<T>(path: string): Promise<T> {
   if (!res.ok) throw new Error(`Yatta API error: ${res.status}`)
   const json = await res.json()
   return json.data
+}
+
+// ============ MATERIALS CACHE ============
+
+let hsrItemCache: Record<string, { name: string; icon: string; rank: number }> | null = null
+
+async function fetchItemList(): Promise<Record<string, { name: string; icon: string; rank: number }>> {
+  if (hsrItemCache) return hsrItemCache
+  const data = await fetchYatta<{ items: Record<string, any> }>('/item')
+  hsrItemCache = {}
+  for (const [id, m] of Object.entries(data.items)) {
+    hsrItemCache[id] = { name: m.name || '', icon: String(m.icon || id), rank: m.rank || 1 }
+  }
+  return hsrItemCache
+}
+
+async function resolveHsrAscensionMaterials(upgradeLevels: any[]): Promise<HsrAscensionMaterial[]> {
+  const items = await fetchItemList()
+  const totals: Record<string, number> = {}
+  for (const level of upgradeLevels) {
+    if (!level.costItems) continue
+    for (const [id, count] of Object.entries(level.costItems)) {
+      // Skip credits (id "2")
+      if (id === '2') continue
+      totals[id] = (totals[id] || 0) + (count as number)
+    }
+  }
+  return Object.entries(totals).map(([id, count]) => {
+    const item = items[id]
+    return {
+      id,
+      name: item?.name || id,
+      icon: item?.icon || id,
+      rarity: item?.rank || 1,
+      count,
+    }
+  }).sort((a, b) => b.rarity - a.rarity)
 }
 
 function normalizePathType(pathType: unknown): HsrPath {
@@ -82,6 +118,11 @@ export async function fetchHsrCharacterDetail(id: string): Promise<HsrCharacter>
     }
   }
 
+  // Ascension materials
+  const ascensionMaterials = Array.isArray(data.upgrade)
+    ? await resolveHsrAscensionMaterials(data.upgrade)
+    : []
+
   return {
     id,
     name: data.name || '',
@@ -91,6 +132,7 @@ export async function fetchHsrCharacterDetail(id: string): Promise<HsrCharacter>
     description: cleanHsrDescription(data.desc || data.description || data.fetter?.description || ''),
     skills,
     eidolons,
+    ascensionMaterials,
   }
 }
 
@@ -166,10 +208,28 @@ export function getHsrElementIcon(element: string): string {
   return `${STARRAIL_RES}/icon/element/${element}.png`
 }
 
+// Map Yatta skill icon names to StarRailRes format
+// SkillIcon_1003_Normal -> 1003_basic_atk
+function mapSkillIcon(yattaIcon: string): string {
+  const match = yattaIcon.match(/SkillIcon_(\d+)_(.+)/)
+  if (!match) return yattaIcon
+  const [, charId, type] = match
+  const typeMap: Record<string, string> = {
+    Normal: 'basic_atk', BP: 'skill', Ultra: 'ultimate',
+    Passive: 'talent', Maze: 'technique',
+    Rank1: 'rank1', Rank2: 'rank2', Rank4: 'rank4', Rank6: 'rank6',
+  }
+  return `${charId}_${typeMap[type] || type.toLowerCase()}`
+}
+
 export function getHsrSkillIcon(icon: string): string {
-  return `${YATTA_HSR_ASSETS}/icon/skill/${icon}.png`
+  return `${STARRAIL_RES}/icon/skill/${mapSkillIcon(icon)}.png`
 }
 
 export function getHsrEidolonIcon(icon: string): string {
-  return `${YATTA_HSR_ASSETS}/icon/skill/${icon}.png`
+  return `${STARRAIL_RES}/icon/skill/${mapSkillIcon(icon)}.png`
+}
+
+export function getHsrItemIcon(icon: string): string {
+  return `${STARRAIL_RES}/icon/item/${icon}.png`
 }

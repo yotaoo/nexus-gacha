@@ -1,3 +1,11 @@
+export interface AscensionMaterial {
+  id: string
+  name: string
+  icon: string
+  rarity: number
+  count: number
+}
+
 export interface GenshinCharacter {
   id: string
   name: string
@@ -12,6 +20,7 @@ export interface GenshinCharacter {
   icon?: string
   skillTalents?: GenshinTalent[]
   constellations?: GenshinConstellation[]
+  ascensionMaterials?: AscensionMaterial[]
 }
 
 export type GenshinElement =

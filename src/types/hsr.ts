@@ -1,3 +1,11 @@
+export interface HsrAscensionMaterial {
+  id: string
+  name: string
+  icon: string
+  rarity: number
+  count: number
+}
+
 export interface HsrCharacter {
   id: string
   name: string
@@ -7,6 +15,7 @@ export interface HsrCharacter {
   description?: string
   skills?: HsrSkill[]
   eidolons?: HsrEidolon[]
+  ascensionMaterials?: HsrAscensionMaterial[]
 }
 
 export type HsrElement =

@@ -81,11 +81,12 @@ export interface BuildItem {
   id: string
   name: string
   rarity: number
+  icon?: string
   note?: string
 }
 
 export interface BuildArtifactSet {
-  sets: { name: string; pieces: number }[]
+  sets: { id?: string; name: string; pieces: number; icon?: string }[]
   note?: string
 }
 
