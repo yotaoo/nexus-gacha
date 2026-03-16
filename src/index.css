@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8F8F8;
+    color: #0F0F0F;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Exo 2', sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F8F8F8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #0F0F0F;
+    border-radius: 0;
+  }
+}
+
+@layer components {
+  /* Halftone dot pattern overlay */
+  .halftone-bg {
+    position: relative;
+  }
+  .halftone-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, #0F0F0F 1px, transparent 1px);
+    background-size: 16px 16px;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Speed lines decorative */
+  .speed-lines {
+    position: relative;
+    overflow: hidden;
+  }
+  .speed-lines::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -20%;
+    width: 40%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      -75deg,
+      transparent,
+      transparent 4px,
+      rgba(230, 57, 70, 0.06) 4px,
+      rgba(230, 57, 70, 0.06) 5px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Manga card base */
+  .manga-card {
+    @apply bg-white border-3 border-manga-ink shadow-manga transition-all duration-200;
+  }
+  .manga-card:hover {
+    @apply shadow-manga-hover -translate-x-0.5 -translate-y-0.5;
+  }
+
+  /* Manga button */
+  .manga-btn {
+    @apply inline-flex items-center justify-center font-heading font-bold
+           border-3 border-manga-ink shadow-manga-sm transition-all duration-150
+           px-5 py-2.5 text-sm uppercase tracking-wider;
+    transform: skewX(-6deg);
+  }
+  .manga-btn > * {
+    transform: skewX(6deg);
+  }
+  .manga-btn:hover {
+    @apply shadow-manga -translate-x-0.5 -translate-y-0.5;
+  }
+  .manga-btn:active {
+    @apply shadow-none translate-x-0.5 translate-y-0.5;
+  }
+  .manga-btn-primary {
+    @apply bg-manga-red text-white;
+  }
+  .manga-btn-outline {
+    @apply bg-white text-manga-ink;
+  }
+  .manga-btn-outline:hover {
+    @apply bg-manga-ink text-white;
+  }
+
+  /* Badge */
+  .manga-badge {
+    @apply inline-flex items-center px-2 py-0.5 text-xs font-bold font-heading uppercase
+           border-2 border-manga-ink bg-white;
+  }
+
+  /* Rarity colors */
+  .rarity-5 {
+    @apply text-amber-500;
+  }
+  .rarity-4 {
+    @apply text-purple-500;
+  }
+  .rarity-5-bg {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  }
+  .rarity-4-bg {
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
