@@ -168,19 +168,51 @@ export async function fetchAllGenshinWeapons(): Promise<GenshinWeapon[]> {
     }))
 }
 
+const PROP_LABELS: Record<string, string> = {
+  FIGHT_PROP_CRITICAL: 'Taux CRIT',
+  FIGHT_PROP_CRITICAL_HURT: 'DGT CRIT',
+  FIGHT_PROP_ATTACK_PERCENT: 'ATQ%',
+  FIGHT_PROP_HP_PERCENT: 'PV%',
+  FIGHT_PROP_DEFENSE_PERCENT: 'DEF%',
+  FIGHT_PROP_CHARGE_EFFICIENCY: 'Recharge d\'energie',
+  FIGHT_PROP_ELEMENT_MASTERY: 'Maitrise elementaire',
+  FIGHT_PROP_PHYSICAL_ADD_HURT: 'Bonus DGT Physique',
+}
+
 export async function fetchGenshinWeapon(id: string): Promise<GenshinWeapon> {
   const data = await fetchYatta<any>(`/weapon/${id}`)
   if (!data || !data.name) throw new Error('Arme introuvable')
 
   const affix = data.affix ? Object.values(data.affix)[0] as any : null
+  const props = data.upgrade?.prop || []
+  const promotes = data.upgrade?.promote || []
+
+  // Calculate base ATK at max level
+  let baseAttack = 0
+  const atkProp = props.find((p: any) => p.propType === 'FIGHT_PROP_BASE_ATTACK')
+  if (atkProp && promotes.length > 0) {
+    const lastPromote = promotes[promotes.length - 1]
+    const addProps = lastPromote.addProps || {}
+    baseAttack = Math.round(atkProp.initValue + (addProps.FIGHT_PROP_BASE_ATTACK || 0))
+  }
+
+  // Format sub stat with French label and value
+  let subStat = ''
+  const subProp = props.find((p: any) => p.propType !== 'FIGHT_PROP_BASE_ATTACK')
+  if (subProp) {
+    const label = PROP_LABELS[subProp.propType] || subProp.propType
+    const isPercent = subProp.propType !== 'FIGHT_PROP_ELEMENT_MASTERY'
+    const value = isPercent ? `${(subProp.initValue * 100).toFixed(1)}%` : Math.round(subProp.initValue).toString()
+    subStat = `${label} ${value}`
+  }
 
   return {
     id,
     name: data.name,
     type: mapWeaponType(data.type || ''),
     rarity: data.rank || 3,
-    baseAttack: 0,
-    subStat: data.specialProp || '',
+    baseAttack,
+    subStat,
     passiveName: affix?.name || '',
     passiveDesc: cleanDescription(affix?.upgrade?.['0'] || ''),
     icon: data.icon,

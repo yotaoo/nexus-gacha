@@ -52,6 +52,9 @@ export interface HsrLightCone {
   description?: string
   passiveName?: string
   passiveDesc?: string
+  baseHP?: number
+  baseATK?: number
+  baseDEF?: number
 }
 
 export interface HsrRelic {

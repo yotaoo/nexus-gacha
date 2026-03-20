@@ -34,8 +34,26 @@ export default function HsrLightConeDetailPage() {
               <RarityStars rarity={lc.rarity} />
             </div>
             {lc.description && (
-              <p className="text-sm text-manga-gray mb-4">{lc.description}</p>
+              <p className="text-sm text-manga-gray mb-4 italic whitespace-pre-line">{lc.description}</p>
             )}
+
+            {(lc.baseHP || lc.baseATK || lc.baseDEF) ? (
+              <div className="grid grid-cols-3 gap-2 mb-4">
+                <div className="text-center p-2 bg-manga-paper border-2 border-manga-ink">
+                  <p className="text-xs text-manga-gray">PV</p>
+                  <p className="font-heading font-bold">{lc.baseHP}</p>
+                </div>
+                <div className="text-center p-2 bg-manga-paper border-2 border-manga-ink">
+                  <p className="text-xs text-manga-gray">ATQ</p>
+                  <p className="font-heading font-bold">{lc.baseATK}</p>
+                </div>
+                <div className="text-center p-2 bg-manga-paper border-2 border-manga-ink">
+                  <p className="text-xs text-manga-gray">DEF</p>
+                  <p className="font-heading font-bold">{lc.baseDEF}</p>
+                </div>
+              </div>
+            ) : null}
+
             {lc.passiveName && (
               <div className="p-3 bg-manga-paper border-2 border-manga-ink">
                 <h3 className="font-heading font-bold text-sm">{lc.passiveName}</h3>

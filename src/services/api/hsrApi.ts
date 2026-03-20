@@ -148,14 +148,44 @@ export async function fetchHsrLightConeList(): Promise<HsrLightCone[]> {
 
 export async function fetchHsrLightConeDetail(id: string): Promise<HsrLightCone> {
   const data = await fetchYatta<any>(`/equipment/${id}`)
+
+  // Calculate max level stats from upgrade data
+  let baseHP = 0, baseATK = 0, baseDEF = 0
+  const upgrades = data.upgrade || []
+  if (upgrades.length > 0) {
+    const last = upgrades[upgrades.length - 1]
+    const base = last.skillBase || {}
+    const add = last.skillAdd || {}
+    const maxLvl = last.maxLevel || 80
+    baseHP = Math.round((base.hPBase || 0) + (add.hPAdd || 0) * (maxLvl - 1))
+    baseATK = Math.round((base.attackBase || 0) + (add.attackAdd || 0) * (maxLvl - 1))
+    baseDEF = Math.round((base.defenceBase || 0) + (add.defenceAdd || 0) * (maxLvl - 1))
+  }
+
+  // Resolve passive description with params (replace #N[f1]% placeholders)
+  let passiveDesc = data.skill?.description || data.skill?.desc || ''
+  const params = data.skill?.params || {}
+  for (const [key, values] of Object.entries(params)) {
+    const arr = values as number[]
+    if (arr && arr.length > 0) {
+      // Use superimposition 1 (index 0)
+      const val = arr[0]
+      const formatted = val < 1 ? `${(val * 100).toFixed(0)}%` : val.toString()
+      passiveDesc = passiveDesc.replace(new RegExp(`#${key}\\[\\w+\\]%?`, 'g'), formatted)
+    }
+  }
+
   return {
     id,
     name: data.name || '',
     rarity: data.rank || data.rarity || 3,
     path: normalizePathType(data.baseType || data.pathType || data.types?.pathType),
-    description: cleanHsrDescription(data.desc || ''),
+    description: cleanHsrDescription(data.description || data.desc || ''),
     passiveName: data.skill?.name || '',
-    passiveDesc: cleanHsrDescription(data.skill?.desc || ''),
+    passiveDesc: cleanHsrDescription(passiveDesc),
+    baseHP,
+    baseATK,
+    baseDEF,
   }
 }
 

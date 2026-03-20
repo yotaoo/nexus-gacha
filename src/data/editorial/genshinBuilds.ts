@@ -150,7 +150,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     ],
     mainStats: { sands: 'Recharge d\'energie', goblet: 'Bonus DGT Hydro', circlet: 'Taux CRIT / DGT CRIT' },
     subStats: ['Recharge d\'energie', 'PV%', 'Taux CRIT', 'DGT CRIT'],
-    tips: 'Yelan scale sur les PV, pas l\'ATQ. Son Dechainage est similaire a Xingqiu mais avec plus de DGT. Sablier RE recommande par genshin.gg.',
+    tips: 'Yelan scale sur les PV, pas l\'ATQ. Son Dechainage est similaire a Xingqiu mais avec plus de DGT. Sablier RE recommande.',
   },
   {
     characterId: '10000025',
@@ -250,7 +250,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     ],
     mainStats: { sands: 'ATQ%', goblet: 'Bonus DGT Cryo', circlet: 'DGT CRIT / ATQ%' },
     subStats: ['DGT CRIT', 'ATQ%', 'Recharge d\'energie', 'Taux CRIT'],
-    tips: 'Avec 4pc Blizzard + resonance Cryo, peu besoin de Taux CRIT. Focalisez DGT CRIT. Dash pour infuser Cryo. Mistsplitter est BiS par genshin.gg.',
+    tips: 'Avec 4pc Blizzard + resonance Cryo, peu besoin de Taux CRIT. Focalisez DGT CRIT. Dash pour infuser Cryo. Mistsplitter est BiS.',
   },
   {
     characterId: '10000037',
@@ -262,7 +262,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
       { id: '15406', name: 'Lune paisible (prototype)', rarity: 4, icon: 'UI_EquipIcon_Bow_Proto', note: 'Bon F2P' },
     ],
     artifacts: [
-      { sets: [{ id: '15019', name: 'Reminiscence nostalgique', pieces: 4, icon: 'UI_RelicIcon_15019_4' }], note: 'BiS par genshin.gg' },
+      { sets: [{ id: '15019', name: 'Reminiscence nostalgique', pieces: 4, icon: 'UI_RelicIcon_15019_4' }], note: 'BiS' },
       { sets: [{ id: '15005', name: 'Blizzard Strayer', pieces: 4, icon: 'UI_RelicIcon_15005_4' }], note: 'Bon en Freeze' },
     ],
     mainStats: { sands: 'ATQ%', goblet: 'Bonus DGT Cryo', circlet: 'DGT CRIT' },
