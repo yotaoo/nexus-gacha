@@ -7,82 +7,83 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Furina',
     role: 'Support / Sub DPS',
     weapons: [
-      { id: '11511', name: 'Splendeur des eaux tranquilles', rarity: 5, icon: 'UI_EquipIcon_Sword_Deshret', note: 'BiS - Synergie parfaite avec son kit' },
-      { id: '11509', name: 'Clef des profondeurs insondees', rarity: 5, icon: 'UI_EquipIcon_Sword_Narukami' },
-      { id: '11416', name: 'Faucheur Fleuve', rarity: 4, icon: 'UI_EquipIcon_Sword_Youtou', note: 'Meilleur choix 4*' },
+      { id: '11513', name: 'Splendeur des eaux calmes', rarity: 5, icon: 'UI_EquipIcon_Sword_Regalis', note: 'BiS - Synergie parfaite avec son kit' },
+      { id: '11505', name: 'Coupeur de jade primordial', rarity: 5, icon: 'UI_EquipIcon_Sword_Morax' },
+      { id: '11416', name: 'Kagotsurube Isshin', rarity: 4, icon: 'UI_EquipIcon_Sword_Youtou', note: 'Meilleur choix 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15032', name: 'Troupe Doree du Soir', pieces: 4, icon: 'UI_RelicIcon_15032_4' }], note: 'BiS universel' },
+      { sets: [{ id: '15017', name: 'Tenacite du Millelithe', pieces: 4, icon: 'UI_RelicIcon_15017_4' }], note: 'Alternative support pur' },
     ],
-    mainStats: { sands: 'PV%', goblet: 'PV%', circlet: 'Taux CRIT / DGT CRIT' },
-    subStats: ['PV%', 'Taux CRIT', 'DGT CRIT', 'Recharge d\'energie'],
-    tips: 'Furina a besoin de beaucoup de PV pour maximiser ses degats et son soin via le Dechainage. Visez 40 000+ PV.',
+    mainStats: { sands: 'Recharge d\'energie', goblet: 'Bonus DGT Hydro', circlet: 'Taux CRIT / DGT CRIT' },
+    subStats: ['Recharge d\'energie', 'Taux CRIT', 'DGT CRIT', 'PV%'],
+    tips: 'Furina est une sub DPS Hydro dont les degats scalent sur les PV. Son Q fait monter et descendre les PV de l\'equipe pour accumuler des Fanfare. Visez 200%+ RE pour un uptime constant.',
   },
   {
     characterId: '10000073',
     name: 'Nahida',
     role: 'Sub DPS / Support Dendro',
     weapons: [
-      { id: '14511', name: 'Mille nuits flottantes', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
-      { id: '14504', name: 'Kagura de la verite sacree', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kunwu' },
-      { id: '14413', name: 'Errance etoilee', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Excellent choix F2P' },
+      { id: '14511', name: 'Mille reves flottants', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
+      { id: '14509', name: 'Verite de Kagura', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Narukami' },
+      { id: '14403', name: 'Memoires de rituels', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Fossil', note: 'Excellent choix 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15025', name: 'Souvenir de foret', pieces: 4, icon: 'UI_RelicIcon_15025_4' }], note: 'BiS pour DPS Dendro' },
-      { sets: [{ id: '15025', name: 'Souvenir de foret', pieces: 2, icon: 'UI_RelicIcon_15025_4' }, { id: '15026', name: 'Reve dore', pieces: 2, icon: 'UI_RelicIcon_15026_4' }] },
+      { sets: [{ id: '15026', name: 'Reve dore', pieces: 4, icon: 'UI_RelicIcon_15026_4' }], note: 'Alternative Quicken' },
     ],
-    mainStats: { sands: 'Maitrise elementaire', goblet: 'Bonus DGT Dendro', circlet: 'Taux CRIT / DGT CRIT' },
-    subStats: ['Taux CRIT', 'DGT CRIT', 'Maitrise elementaire', 'ATQ%'],
-    tips: 'Nahida scale tres bien avec la Maitrise elementaire. Son E marque les ennemis pour des DGTs Dendro constants.',
+    mainStats: { sands: 'Maitrise elementaire', goblet: 'Maitrise elementaire', circlet: 'Maitrise elementaire' },
+    subStats: ['Recharge d\'energie', 'Maitrise elementaire', 'Taux CRIT', 'DGT CRIT'],
+    tips: 'Nahida scale tres bien avec la Maitrise elementaire. Son E marque les ennemis pour des DGTs Dendro constants depuis le hors-terrain. Full ME sablier/calice/serre-tete recommande.',
   },
   {
     characterId: '10000047',
     name: 'Kazuha',
     role: 'Support / VV Shred',
     weapons: [
-      { id: '11509', name: 'Lame Liberatrice', rarity: 5, icon: 'UI_EquipIcon_Sword_Narukami', note: 'BiS' },
-      { id: '11503', name: 'Lame du pourfendeur de brume', rarity: 5, icon: 'UI_EquipIcon_Sword_Widsith' },
-      { id: '11401', name: 'Epee de fer', rarity: 4, icon: 'UI_EquipIcon_Sword_Zephyrus', note: 'Solide option F2P' },
+      { id: '11503', name: 'Serment de la liberte', rarity: 5, icon: 'UI_EquipIcon_Sword_Widsith', note: 'BiS - ME + buff equipe' },
+      { id: '11401', name: 'Epee de Favonius', rarity: 4, icon: 'UI_EquipIcon_Sword_Zephyrus', note: 'Generateur de particules' },
+      { id: '11418', name: 'Clair de lune de Xiphos', rarity: 4, icon: 'UI_EquipIcon_Sword_Pleroma', note: 'ME + RE' },
     ],
     artifacts: [
       { sets: [{ id: '15002', name: 'Ombre de la Verte Chasseuse', pieces: 4, icon: 'UI_RelicIcon_15002_4' }], note: 'Obligatoire pour le debuff RES' },
     ],
     mainStats: { sands: 'Maitrise elementaire', goblet: 'Maitrise elementaire', circlet: 'Maitrise elementaire' },
-    subStats: ['Maitrise elementaire', 'Recharge d\'energie', 'Taux CRIT', 'DGT CRIT'],
-    tips: 'Full Maitrise elementaire pour maximiser le buff de DGT elementaire pour l\'equipe. Besoin de ~160% RE.',
+    subStats: ['Maitrise elementaire', 'Recharge d\'energie', 'ATQ%', 'Taux CRIT'],
+    tips: 'Full Maitrise elementaire pour maximiser le buff de DGT elementaire pour l\'equipe. Besoin de ~160% RE. Freedom-Sworn est BiS pour le buff d\'equipe supplementaire.',
   },
   {
     characterId: '10000032',
     name: 'Bennett',
     role: 'Support / Heal / Buff ATQ',
     weapons: [
-      { id: '11502', name: 'Moisson de Jade', rarity: 5, icon: 'UI_EquipIcon_Sword_Dvalin' },
-      { id: '11413', name: 'Epee de Sapwood', rarity: 4, icon: 'UI_EquipIcon_Sword_Magnum' },
-      { id: '11406', name: 'Lame de l\'Alley', rarity: 4, icon: 'UI_EquipIcon_Sword_Proto' },
+      { id: '11509', name: 'Reflet de tranche-brume', rarity: 5, icon: 'UI_EquipIcon_Sword_Narukami', note: 'BiS' },
+      { id: '11502', name: 'Lame de la Voute d\'Azur', rarity: 5, icon: 'UI_EquipIcon_Sword_Dvalin' },
+      { id: '11503', name: 'Serment de la liberte', rarity: 5, icon: 'UI_EquipIcon_Sword_Widsith' },
     ],
     artifacts: [
-      { sets: [{ id: '15020', name: 'Embleme du destin brise', pieces: 4, icon: 'UI_RelicIcon_15020_4' }], note: 'Pour maximiser le Dechainage' },
-      { sets: [{ id: '15007', name: 'Ancien rituel royal', pieces: 4, icon: 'UI_RelicIcon_15007_4' }], note: 'Alternative heal + buff' },
+      { sets: [{ id: '15007', name: 'Ancien rituel royal', pieces: 4, icon: 'UI_RelicIcon_15007_4' }], note: 'BiS buff equipe via Dechainage' },
+      { sets: [{ id: '15020', name: 'Embleme du destin brise', pieces: 4, icon: 'UI_RelicIcon_15020_4' }], note: 'Alternative RE' },
     ],
-    mainStats: { sands: 'Recharge d\'energie', goblet: 'PV%', circlet: 'Taux de guerison' },
-    subStats: ['Recharge d\'energie', 'PV%', 'PV', 'Taux CRIT'],
-    tips: 'Le buff ATQ de Bennett scale sur son ATQ de base (personnage + arme). Visez 200%+ RE pour son Q.',
+    mainStats: { sands: 'ATQ% / Recharge d\'energie', goblet: 'Bonus DGT Pyro', circlet: 'Taux CRIT / DGT CRIT' },
+    subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Recharge d\'energie'],
+    tips: 'Le buff ATQ de Bennett scale sur son ATQ de base (personnage + arme). Noblesse Oblige est BiS pour le buff du Q. Visez 200%+ RE pour uptime maximal.',
   },
   {
     characterId: '10000023',
     name: 'Xiangling',
     role: 'Sub DPS Pyro',
     weapons: [
-      { id: '13505', name: 'Baton de la Melee', rarity: 5, icon: 'UI_EquipIcon_Pole_Morax', note: 'BiS' },
-      { id: '13509', name: 'Attrape-poisson', rarity: 4, icon: 'UI_EquipIcon_Pole_Narukami', note: 'Excellent F2P' },
-      { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust' },
+      { id: '13511', name: 'Baton des sables ecarlates', rarity: 5, icon: 'UI_EquipIcon_Pole_Deshret', note: 'BiS' },
+      { id: '13501', name: 'Baton de Homa', rarity: 5, icon: 'UI_EquipIcon_Pole_Homa' },
+      { id: '13415', name: 'La prise', rarity: 4, icon: 'UI_EquipIcon_Pole_Mori', note: 'Excellent F2P (R5)' },
     ],
     artifacts: [
       { sets: [{ id: '15020', name: 'Embleme du destin brise', pieces: 4, icon: 'UI_RelicIcon_15020_4' }], note: 'BiS - boost son Dechainage' },
     ],
-    mainStats: { sands: 'Maitrise elementaire / ATQ%', goblet: 'Bonus DGT Pyro', circlet: 'Taux CRIT / DGT CRIT' },
-    subStats: ['Taux CRIT', 'DGT CRIT', 'Maitrise elementaire', 'Recharge d\'energie'],
-    tips: 'Guoba et Pyronado snap-shot les buffs au moment de l\'activation. Activez Bennett Q avant Xiangling Q.',
+    mainStats: { sands: 'Recharge d\'energie / ATQ%', goblet: 'Bonus DGT Pyro', circlet: 'Taux CRIT / DGT CRIT' },
+    subStats: ['Recharge d\'energie', 'Taux CRIT', 'DGT CRIT', 'ATQ%'],
+    tips: 'Guoba et Pyronado snap-shot les buffs au moment de l\'activation. Activez Bennett Q avant Xiangling Q. Visez 200%+ RE pour son Q constant.',
   },
   // === S Tier ===
   {
@@ -90,31 +91,33 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Shogun Raiden',
     role: 'Main DPS / Support Electro',
     weapons: [
-      { id: '13509', name: 'Transfixion du Naganadel', rarity: 5, icon: 'UI_EquipIcon_Pole_Narukami', note: 'BiS' },
-      { id: '13505', name: 'Attrape-poisson', rarity: 4, icon: 'UI_EquipIcon_Pole_Morax', note: 'F2P tres competitif' },
+      { id: '13509', name: 'Lumiere du faucheur', rarity: 5, icon: 'UI_EquipIcon_Pole_Narukami', note: 'BiS signature' },
+      { id: '13501', name: 'Baton de Homa', rarity: 5, icon: 'UI_EquipIcon_Pole_Homa' },
+      { id: '13415', name: 'La prise', rarity: 4, icon: 'UI_EquipIcon_Pole_Mori', note: 'F2P tres competitif (R5)' },
     ],
     artifacts: [
       { sets: [{ id: '15020', name: 'Embleme du destin brise', pieces: 4, icon: 'UI_RelicIcon_15020_4' }], note: 'BiS absolu' },
     ],
-    mainStats: { sands: 'ATQ% / Recharge d\'energie', goblet: 'Bonus DGT Electro / ATQ%', circlet: 'Taux CRIT / DGT CRIT' },
+    mainStats: { sands: 'Recharge d\'energie / ATQ%', goblet: 'Bonus DGT Electro / ATQ%', circlet: 'Taux CRIT / DGT CRIT' },
     subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Recharge d\'energie'],
-    tips: 'Raiden convertit la RE en bonus DGT Electro. Avec son arme signature, ATQ% sablier est meilleur.',
+    tips: 'Raiden convertit la RE en bonus DGT Electro. Avec son arme signature, ATQ% sablier est meilleur. Priorite CRIT > ATQ% > RE.',
   },
   {
     characterId: '10000087',
     name: 'Neuvillette',
     role: 'Main DPS Hydro',
     weapons: [
-      { id: '14514', name: 'Splendeur des Fontaines', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Iudex', note: 'BiS' },
-      { id: '14506', name: 'Serment du vent et de la pluie', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kaleido' },
-      { id: '14413', name: 'Errance etoilee', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon choix 4*' },
+      { id: '14514', name: 'Tome du flux eternel', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Iudex', note: 'BiS signature' },
+      { id: '14424', name: 'Jade sacrificiel', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Yue', note: 'Bon 4* PV scaling' },
+      { id: '14413', name: 'Contes de Dodoco', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Option F2P' },
     ],
     artifacts: [
       { sets: [{ id: '15031', name: 'Chasseur de la Marechaussee', pieces: 4, icon: 'UI_RelicIcon_15031_4' }], note: 'BiS' },
+      { sets: [{ id: '15018', name: 'Coeur des profondeurs', pieces: 4, icon: 'UI_RelicIcon_15018_4' }], note: 'Alternative Hydro' },
     ],
     mainStats: { sands: 'PV%', goblet: 'Bonus DGT Hydro', circlet: 'Taux CRIT / DGT CRIT' },
-    subStats: ['Taux CRIT', 'DGT CRIT', 'PV%', 'ATQ%'],
-    tips: 'L\'attaque chargee de Neuvillette est son principal DPS. Restez immobile pendant le canal pour maximiser les degats.',
+    subStats: ['Recharge d\'energie', 'Taux CRIT', 'DGT CRIT', 'PV%'],
+    tips: 'L\'attaque chargee de Neuvillette est son principal DPS. Restez immobile pendant le canal pour maximiser les degats. Scale sur les PV max.',
   },
   {
     characterId: '10000046',
@@ -122,80 +125,81 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     role: 'Main DPS Pyro',
     weapons: [
       { id: '13501', name: 'Baton de Homa', rarity: 5, icon: 'UI_EquipIcon_Pole_Homa', note: 'BiS' },
-      { id: '13415', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Mori' },
+      { id: '13511', name: 'Baton des sables ecarlates', rarity: 5, icon: 'UI_EquipIcon_Pole_Deshret' },
+      { id: '13424', name: 'Ballade des fjords', rarity: 4, icon: 'UI_EquipIcon_Pole_Shanty', note: 'Bon choix 4* ME' },
     ],
     artifacts: [
-      { sets: [{ id: '15019', name: 'Reminiscence nostalgique', pieces: 4, icon: 'UI_RelicIcon_15019_4' }], note: 'BiS Vaporisation' },
-      { sets: [{ id: '15006', name: 'Sorciere des flammes ardentes', pieces: 4, icon: 'UI_RelicIcon_15006_4' }] },
+      { sets: [{ id: '15006', name: 'Sorciere des flammes ardentes', pieces: 4, icon: 'UI_RelicIcon_15006_4' }], note: 'BiS Vaporisation' },
+      { sets: [{ id: '15019', name: 'Reminiscence nostalgique', pieces: 4, icon: 'UI_RelicIcon_15019_4' }], note: 'Alternative' },
     ],
     mainStats: { sands: 'PV% / Maitrise elementaire', goblet: 'Bonus DGT Pyro', circlet: 'Taux CRIT / DGT CRIT' },
-    subStats: ['Taux CRIT', 'DGT CRIT', 'PV%', 'Maitrise elementaire'],
-    tips: 'Hu Tao est plus forte sous 50% PV. Ne pas la soigner a fond. Jump cancel ses attaques chargees.',
+    subStats: ['Taux CRIT', 'DGT CRIT', 'Maitrise elementaire', 'PV%'],
+    tips: 'Hu Tao est plus forte sous 50% PV. Ne pas la soigner a fond. Jump cancel ses attaques chargees. Crimson Witch est BiS pour la Vaporisation.',
   },
   {
     characterId: '10000060',
     name: 'Yelan',
     role: 'Sub DPS Hydro',
     weapons: [
-      { id: '15508', name: 'Serment des rochers aquiferes', rarity: 5, icon: 'UI_EquipIcon_Bow_Kirin', note: 'BiS' },
-      { id: '15507', name: 'Aqua Simulacra', rarity: 5, icon: 'UI_EquipIcon_Bow_Worldbane' },
-      { id: '15411', name: 'Arc de Favonius', rarity: 4, icon: 'UI_EquipIcon_Bow_Fallensun' },
+      { id: '15503', name: 'Ultime soupir', rarity: 5, icon: 'UI_EquipIcon_Bow_Widsith', note: 'BiS (Elegie pour la fin)' },
+      { id: '15401', name: 'Arc de chasse de Favonius', rarity: 4, icon: 'UI_EquipIcon_Bow_Zephyrus', note: 'Generateur particules' },
+      { id: '15508', name: 'Simulacre d\'eau', rarity: 5, icon: 'UI_EquipIcon_Bow_Kirin' },
     ],
     artifacts: [
       { sets: [{ id: '15020', name: 'Embleme du destin brise', pieces: 4, icon: 'UI_RelicIcon_15020_4' }], note: 'BiS' },
     ],
-    mainStats: { sands: 'PV%', goblet: 'Bonus DGT Hydro', circlet: 'Taux CRIT / DGT CRIT' },
-    subStats: ['Taux CRIT', 'DGT CRIT', 'PV%', 'Recharge d\'energie'],
-    tips: 'Yelan scale sur les PV, pas l\'ATQ. Son Dechainage est similaire a Xingqiu mais avec plus de DGT.',
+    mainStats: { sands: 'Recharge d\'energie', goblet: 'Bonus DGT Hydro', circlet: 'Taux CRIT / DGT CRIT' },
+    subStats: ['Recharge d\'energie', 'PV%', 'Taux CRIT', 'DGT CRIT'],
+    tips: 'Yelan scale sur les PV, pas l\'ATQ. Son Dechainage est similaire a Xingqiu mais avec plus de DGT. Sablier RE recommande par genshin.gg.',
   },
   {
     characterId: '10000025',
     name: 'Xingqiu',
     role: 'Sub DPS Hydro',
     weapons: [
-      { id: '11510', name: 'Briseur de ciel', rarity: 5, icon: 'UI_EquipIcon_Sword_Amenoma' },
-      { id: '11402', name: 'Epee de Sacrifices', rarity: 4, icon: 'UI_EquipIcon_Sword_Troupe', note: 'BiS 4* pour la RE' },
-      { id: '11410', name: 'Epee de Favonius', rarity: 4, icon: 'UI_EquipIcon_Sword_Outlaw' },
+      { id: '11505', name: 'Coupeur de jade primordial', rarity: 5, icon: 'UI_EquipIcon_Sword_Morax', note: 'BiS DPS' },
+      { id: '11509', name: 'Reflet de tranche-brume', rarity: 5, icon: 'UI_EquipIcon_Sword_Narukami' },
+      { id: '11403', name: 'Epee rituelle', rarity: 4, icon: 'UI_EquipIcon_Sword_Fossil', note: 'BiS 4* pour la RE' },
     ],
     artifacts: [
       { sets: [{ id: '15020', name: 'Embleme du destin brise', pieces: 4, icon: 'UI_RelicIcon_15020_4' }], note: 'BiS' },
     ],
-    mainStats: { sands: 'ATQ% / Recharge d\'energie', goblet: 'Bonus DGT Hydro', circlet: 'Taux CRIT / DGT CRIT' },
-    subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Recharge d\'energie'],
-    tips: 'Epee de Sacrifices permet de relancer son E pour plus de particules. Visez ~180% RE.',
+    mainStats: { sands: 'Recharge d\'energie', goblet: 'Bonus DGT Hydro', circlet: 'Taux CRIT / DGT CRIT' },
+    subStats: ['Recharge d\'energie', 'Taux CRIT', 'DGT CRIT', 'ATQ%'],
+    tips: 'Epee rituelle (Sacrificial Sword) permet de relancer son E pour plus de particules. Visez ~180-200% RE pour uptime constant du Q.',
   },
   {
     characterId: '10000030',
     name: 'Zhongli',
     role: 'Support / Shielder',
     weapons: [
-      { id: '13504', name: 'Coupe-herbe du Jardinier', rarity: 5, icon: 'UI_EquipIcon_Pole_Kunwu', note: 'BiS DPS hybride' },
-      { id: '13507', name: 'Baton de Homa', rarity: 5, icon: 'UI_EquipIcon_Pole_Santika' },
-      { id: '13401', name: 'Dent de loup noir', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust', note: 'F2P shield' },
+      { id: '13401', name: 'Fleau du dragon', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust', note: 'BiS PV/RE F2P' },
+      { id: '13407', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Zephyrus', note: 'Generateur particules' },
+      { id: '13505', name: 'Lance de jade ailee', rarity: 5, icon: 'UI_EquipIcon_Pole_Morax', note: 'Option 5*' },
     ],
     artifacts: [
       { sets: [{ id: '15017', name: 'Tenacite du Millelithe', pieces: 4, icon: 'UI_RelicIcon_15017_4' }], note: 'BiS support - buff ATQ equipe' },
     ],
     mainStats: { sands: 'PV%', goblet: 'PV%', circlet: 'PV%' },
     subStats: ['PV%', 'PV', 'Recharge d\'energie', 'Taux CRIT'],
-    tips: 'Full PV pour un bouclier incassable. Son bouclier reduit toutes les RES ennemies de 20%.',
+    tips: 'Full PV pour un bouclier incassable. Son bouclier reduit toutes les RES ennemies de 20%. Fléau du dragon est le meilleur choix F2P pour les PV.',
   },
   {
     characterId: '10000078',
     name: 'Alhaitham',
     role: 'Main DPS Dendro',
     weapons: [
-      { id: '11511', name: 'Lumiere de la Foliee', rarity: 5, icon: 'UI_EquipIcon_Sword_Deshret', note: 'BiS' },
-      { id: '11509', name: 'Haran Geppaku Futsu', rarity: 5, icon: 'UI_EquipIcon_Sword_Narukami' },
-      { id: '11416', name: 'Faucheur Fleuve', rarity: 4, icon: 'UI_EquipIcon_Sword_Youtou', note: 'Bon choix 4*' },
+      { id: '11512', name: 'Lumiere d\'incision foliaire', rarity: 5, icon: 'UI_EquipIcon_Sword_Ayus', note: 'BiS signature' },
+      { id: '11505', name: 'Coupeur de jade primordial', rarity: 5, icon: 'UI_EquipIcon_Sword_Morax' },
+      { id: '11409', name: 'Epee noire', rarity: 4, icon: 'UI_EquipIcon_Sword_Bloodstained', note: 'Bon choix 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15026', name: 'Reve dore', pieces: 4, icon: 'UI_RelicIcon_15026_4' }], note: 'BiS pour Quicken' },
       { sets: [{ id: '15025', name: 'Souvenir de foret', pieces: 4, icon: 'UI_RelicIcon_15025_4' }] },
     ],
-    mainStats: { sands: 'Maitrise elementaire', goblet: 'Bonus DGT Dendro', circlet: 'Taux CRIT / DGT CRIT' },
-    subStats: ['Taux CRIT', 'DGT CRIT', 'Maitrise elementaire', 'ATQ%'],
-    tips: 'Alhaitham excelle en Quicken/Spread. Generez des miroirs avec E puis attaques normales pour DPS continu.',
+    mainStats: { sands: 'Maitrise elementaire / ATQ%', goblet: 'Bonus DGT Dendro', circlet: 'Taux CRIT / DGT CRIT' },
+    subStats: ['Recharge d\'energie', 'Taux CRIT', 'DGT CRIT', 'Maitrise elementaire'],
+    tips: 'Alhaitham excelle en Quicken/Spread. Generez des miroirs avec E puis attaques normales pour DPS continu. Light of Foliar Incision est BiS.',
   },
   // === A Tier ===
   {
@@ -203,98 +207,99 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Fischl',
     role: 'Sub DPS Electro',
     weapons: [
-      { id: '15509', name: 'Polarisation Aleatoire', rarity: 5, icon: 'UI_EquipIcon_Bow_Kirin', note: 'BiS' },
-      { id: '15407', name: 'Arc a poulies galvanisees', rarity: 4, icon: 'UI_EquipIcon_Bow_Exotic', note: 'Solide 4*' },
-      { id: '15401', name: 'Arc de Favonius', rarity: 4, icon: 'UI_EquipIcon_Bow_Zephyrus' },
+      { id: '15507', name: 'Etoile polaire', rarity: 5, icon: 'UI_EquipIcon_Bow_Worldbane', note: 'BiS' },
+      { id: '15508', name: 'Simulacre d\'eau', rarity: 5, icon: 'UI_EquipIcon_Bow_Kirin' },
+      { id: '15509', name: 'Pulsation du tonnerre', rarity: 5, icon: 'UI_EquipIcon_Bow_Narukami' },
     ],
     artifacts: [
-      { sets: [{ id: '15015', name: 'Fureur du tonnerre', pieces: 2, icon: 'UI_RelicIcon_15015_4' }, { id: '15001', name: 'Gladiateur', pieces: 2, icon: 'UI_RelicIcon_15001_4' }], note: 'Polyvalent' },
+      { sets: [{ id: '15032', name: 'Troupe Doree du Soir', pieces: 4, icon: 'UI_RelicIcon_15032_4' }], note: 'BiS' },
       { sets: [{ id: '15026', name: 'Reve dore', pieces: 4, icon: 'UI_RelicIcon_15026_4' }], note: 'En equipe Aggravate' },
     ],
     mainStats: { sands: 'ATQ%', goblet: 'Bonus DGT Electro', circlet: 'Taux CRIT / DGT CRIT' },
-    subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Maitrise elementaire'],
-    tips: 'Oz attaque meme quand Fischl n\'est pas sur le terrain. Repositionnez Oz avec le Dechainage.',
+    subStats: ['Recharge d\'energie', 'Taux CRIT', 'DGT CRIT', 'ATQ%'],
+    tips: 'Oz attaque meme quand Fischl n\'est pas sur le terrain. Repositionnez Oz avec le Dechainage. Golden Troupe booste ses DGT off-field.',
   },
   {
     characterId: '10000054',
     name: 'Kokomi',
     role: 'Support / Healer / Hydro applicator',
     weapons: [
-      { id: '14506', name: 'Everlasting Moonglow', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kaleido', note: 'BiS' },
-      { id: '14414', name: 'Prototype Amber', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Truelens', note: 'F2P heal' },
-      { id: '14404', name: 'Thrilling Tales', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Erta', note: 'Buff ATQ 48% pour l\'equipe' },
+      { id: '14404', name: 'Grimoire royal', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Theocrat', note: 'Buff ATQ 48% pour l\'equipe' },
+      { id: '14406', name: 'Malice (prototype)', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Proto', note: 'F2P heal' },
+      { id: '14414', name: 'Anneau des Hakushin', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Bakufu', note: 'EM buff' },
     ],
     artifacts: [
-      { sets: [{ id: '15028', name: 'Vagues Oceaniques', pieces: 4, icon: 'UI_RelicIcon_15028_4' }], note: 'BiS support' },
-      { sets: [{ id: '15017', name: 'Tenacite du Millelithe', pieces: 4, icon: 'UI_RelicIcon_15017_4' }], note: 'Alternative buff ATQ' },
+      { sets: [{ id: '15017', name: 'Tenacite du Millelithe', pieces: 4, icon: 'UI_RelicIcon_15017_4' }], note: 'BiS support buff ATQ' },
+      { sets: [{ id: '15023', name: 'Coquillage', pieces: 4, icon: 'UI_RelicIcon_15023_4' }], note: 'Alternative heal pur' },
     ],
-    mainStats: { sands: 'PV%', goblet: 'Bonus DGT Hydro', circlet: 'Taux de guerison' },
-    subStats: ['PV%', 'Recharge d\'energie', 'PV', 'Maitrise elementaire'],
-    tips: 'Kokomi ne peut pas CRIT (-100% taux). Focalisez PV et soin. Sa meduse applique Hydro en continu.',
+    mainStats: { sands: 'PV% / Recharge d\'energie', goblet: 'PV%', circlet: 'PV% / Taux de guerison' },
+    subStats: ['Recharge d\'energie', 'PV%', 'ATQ%', 'PV'],
+    tips: 'Kokomi ne peut pas CRIT (-100% taux). Focalisez PV et soin. Sa meduse applique Hydro en continu. Tenacity BiS pour buff ATQ.',
   },
   {
     characterId: '10000002',
     name: 'Kamisato Ayaka',
     role: 'Main DPS Cryo',
     weapons: [
-      { id: '11510', name: 'Scion de la brume', rarity: 5, icon: 'UI_EquipIcon_Sword_Amenoma', note: 'BiS' },
-      { id: '11503', name: 'Lame du pourfendeur de brume', rarity: 5, icon: 'UI_EquipIcon_Sword_Widsith' },
-      { id: '11412', name: 'Amenoma Kageuchi', rarity: 4, icon: 'UI_EquipIcon_Sword_Bakufu', note: 'Excellent F2P' },
+      { id: '11509', name: 'Reflet de tranche-brume', rarity: 5, icon: 'UI_EquipIcon_Sword_Narukami', note: 'BiS' },
+      { id: '11510', name: 'Lune ondulante de Futsu', rarity: 5, icon: 'UI_EquipIcon_Sword_Amenoma' },
+      { id: '11514', name: 'Uraku Misugiri', rarity: 5, icon: 'UI_EquipIcon_Sword_Needle' },
     ],
     artifacts: [
       { sets: [{ id: '15005', name: 'Blizzard Strayer', pieces: 4, icon: 'UI_RelicIcon_15005_4' }], note: 'BiS - +40% Taux CRIT sur ennemis geles' },
     ],
-    mainStats: { sands: 'ATQ%', goblet: 'Bonus DGT Cryo', circlet: 'DGT CRIT' },
+    mainStats: { sands: 'ATQ%', goblet: 'Bonus DGT Cryo', circlet: 'DGT CRIT / ATQ%' },
     subStats: ['DGT CRIT', 'ATQ%', 'Recharge d\'energie', 'Taux CRIT'],
-    tips: 'Avec 4pc Blizzard + resonance Cryo, peu besoin de Taux CRIT. Focalisez DGT CRIT. Dash pour infuser Cryo.',
+    tips: 'Avec 4pc Blizzard + resonance Cryo, peu besoin de Taux CRIT. Focalisez DGT CRIT. Dash pour infuser Cryo. Mistsplitter est BiS par genshin.gg.',
   },
   {
     characterId: '10000037',
     name: 'Ganyu',
     role: 'Main DPS / Sub DPS Cryo',
     weapons: [
-      { id: '15502', name: 'Amos', rarity: 5, icon: 'UI_EquipIcon_Bow_Amos', note: 'BiS Melt/Freeze' },
-      { id: '15509', name: 'Aqua Simulacra', rarity: 5, icon: 'UI_EquipIcon_Bow_Kirin' },
-      { id: '15403', name: 'Prototype Crescent', rarity: 4, icon: 'UI_EquipIcon_Bow_Proto', note: 'Bon F2P' },
+      { id: '15511', name: 'La voie du chasseur', rarity: 5, icon: 'UI_EquipIcon_Bow_Ayus', note: 'BiS' },
+      { id: '15502', name: 'Arc d\'Amos', rarity: 5, icon: 'UI_EquipIcon_Bow_Amos', note: 'Excellent Melt/Freeze' },
+      { id: '15406', name: 'Lune paisible (prototype)', rarity: 4, icon: 'UI_EquipIcon_Bow_Proto', note: 'Bon F2P' },
     ],
     artifacts: [
-      { sets: [{ id: '15005', name: 'Blizzard Strayer', pieces: 4, icon: 'UI_RelicIcon_15005_4' }], note: 'BiS Freeze' },
-      { sets: [{ id: '15003', name: 'Troupe du Gladiateur', pieces: 4, icon: 'UI_RelicIcon_15003_4' }], note: 'BiS Melt' },
+      { sets: [{ id: '15019', name: 'Reminiscence nostalgique', pieces: 4, icon: 'UI_RelicIcon_15019_4' }], note: 'BiS par genshin.gg' },
+      { sets: [{ id: '15005', name: 'Blizzard Strayer', pieces: 4, icon: 'UI_RelicIcon_15005_4' }], note: 'Bon en Freeze' },
     ],
     mainStats: { sands: 'ATQ%', goblet: 'Bonus DGT Cryo', circlet: 'DGT CRIT' },
-    subStats: ['DGT CRIT', 'ATQ%', 'Taux CRIT', 'Maitrise elementaire'],
-    tips: 'Attaque chargee niveau 2 pour DPS max. En Melt, Maitrise elementaire sablier peut etre meilleur.',
+    subStats: ['DGT CRIT', 'Taux CRIT', 'Maitrise elementaire', 'ATQ%'],
+    tips: 'Attaque chargee niveau 2 pour DPS max. En Melt, Maitrise elementaire sablier peut etre meilleur. Hunter\'s Path est le BiS actuel.',
   },
   {
     characterId: '10000043',
     name: 'Sucrose',
     role: 'Support / VV Shred / EM Buffer',
     weapons: [
-      { id: '14402', name: 'Codex de Sacrifices', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Erta', note: 'BiS 4* pour la RE' },
-      { id: '14404', name: 'Thrilling Tales', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Erta', note: 'Buff ATQ 48%' },
+      { id: '14511', name: 'Mille reves flottants', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
+      { id: '14416', name: 'Etoile du soir errante', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Pleroma', note: 'Wandering Evenstar' },
+      { id: '14402', name: 'Mouvement vagabond', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Troupe', note: 'RE alternative' },
     ],
     artifacts: [
       { sets: [{ id: '15002', name: 'Ombre de la Verte Chasseuse', pieces: 4, icon: 'UI_RelicIcon_15002_4' }], note: 'Obligatoire pour VV shred' },
     ],
     mainStats: { sands: 'Maitrise elementaire', goblet: 'Maitrise elementaire', circlet: 'Maitrise elementaire' },
     subStats: ['Maitrise elementaire', 'Recharge d\'energie', 'ATQ%', 'Taux CRIT'],
-    tips: 'Sucrose partage sa Maitrise elementaire avec l\'equipe. Alternative F2P a Kazuha pour les reactions.',
+    tips: 'Sucrose partage sa Maitrise elementaire avec l\'equipe. Alternative F2P a Kazuha pour les reactions. A Thousand Floating Dreams est BiS.',
   },
   {
     characterId: '10000041',
     name: 'Mona',
     role: 'Sub DPS / Support Hydro',
     weapons: [
-      { id: '14504', name: 'Kagura de la verite sacree', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kunwu' },
-      { id: '14404', name: 'Thrilling Tales', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Erta', note: 'Buff ATQ pour l\'equipe' },
+      { id: '14404', name: 'Grimoire royal', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Theocrat', note: 'BiS utilitaire' },
+      { id: '14401', name: 'Code de Favonius', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Zephyrus', note: 'Generateur particules' },
     ],
     artifacts: [
-      { sets: [{ id: '15020', name: 'Embleme du destin brise', pieces: 4, icon: 'UI_RelicIcon_15020_4' }], note: 'BiS pour Dechainage' },
-      { sets: [{ id: '15017', name: 'Tenacite du Millelithe', pieces: 4, icon: 'UI_RelicIcon_15017_4' }], note: 'Support pur' },
+      { sets: [{ id: '15007', name: 'Ancien rituel royal', pieces: 4, icon: 'UI_RelicIcon_15007_4' }], note: 'BiS support' },
+      { sets: [{ id: '15017', name: 'Tenacite du Millelithe', pieces: 4, icon: 'UI_RelicIcon_15017_4' }], note: 'Alternative buff ATQ' },
     ],
-    mainStats: { sands: 'Recharge d\'energie', goblet: 'Bonus DGT Hydro', circlet: 'Taux CRIT / DGT CRIT' },
-    subStats: ['Recharge d\'energie', 'Taux CRIT', 'DGT CRIT', 'ATQ%'],
-    tips: 'Le Dechainage de Mona applique Omen qui augmente les DGT recus par les ennemis. Bon en Freeze.',
+    mainStats: { sands: 'Recharge d\'energie / ATQ%', goblet: 'Bonus DGT Hydro / ATQ%', circlet: 'Taux CRIT' },
+    subStats: ['Recharge d\'energie', 'Taux CRIT', 'ATQ%', 'DGT CRIT'],
+    tips: 'Le Dechainage de Mona applique Omen qui augmente les DGT recus par les ennemis. Bon en Freeze. Thrilling Tales donne +48% ATQ a l\'equipe.',
   },
   // === B Tier ===
   {
@@ -302,25 +307,25 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Diluc',
     role: 'Main DPS Pyro',
     weapons: [
-      { id: '12504', name: 'Poing du Loup', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'BiS' },
-      { id: '12510', name: 'Pines Redhorn', rarity: 5, icon: 'UI_EquipIcon_Claymore_Itadorimaru' },
-      { id: '12405', name: 'Archique', rarity: 4, icon: 'UI_EquipIcon_Claymore_Lapis', note: 'Correct F2P' },
+      { id: '12502', name: 'Mort-du-loup', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'BiS' },
+      { id: '12510', name: 'Brise-pierre de corne rouge', rarity: 5, icon: 'UI_EquipIcon_Claymore_Itadorimaru' },
+      { id: '12409', name: 'Ossature du dragon', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Bon 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15006', name: 'Sorciere des flammes ardentes', pieces: 4, icon: 'UI_RelicIcon_15006_4' }], note: 'BiS pour Vaporisation' },
     ],
     mainStats: { sands: 'ATQ%', goblet: 'Bonus DGT Pyro', circlet: 'Taux CRIT / DGT CRIT' },
     subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Maitrise elementaire'],
-    tips: 'Enchainez E > attaque normale > E pour maximiser le DPS. Son Q infuse Pyro sur la claymore.',
+    tips: 'Enchainez E > attaque normale > E pour maximiser le DPS. Son Q infuse Pyro sur la claymore. Wolf\'s Gravestone est BiS.',
   },
   {
     characterId: '10000003',
     name: 'Jean',
     role: 'Support / Healer / VV Shred',
     weapons: [
-      { id: '11502', name: 'Moisson de Jade', rarity: 5, icon: 'UI_EquipIcon_Sword_Dvalin', note: 'BiS' },
+      { id: '11502', name: 'Lame de la Voute d\'Azur', rarity: 5, icon: 'UI_EquipIcon_Sword_Dvalin', note: 'BiS' },
       { id: '11401', name: 'Epee de Favonius', rarity: 4, icon: 'UI_EquipIcon_Sword_Zephyrus', note: 'Pour la RE' },
-      { id: '11412', name: 'Amenoma Kageuchi', rarity: 4, icon: 'UI_EquipIcon_Sword_Bakufu' },
+      { id: '11414', name: 'Lame kageuchi d\'Amenoma', rarity: 4, icon: 'UI_EquipIcon_Sword_Bakufu' },
     ],
     artifacts: [
       { sets: [{ id: '15002', name: 'Ombre de la Verte Chasseuse', pieces: 4, icon: 'UI_RelicIcon_15002_4' }], note: 'VV shred + heal' },
@@ -334,9 +339,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Tartaglia',
     role: 'Main DPS / Enabler Hydro',
     weapons: [
-      { id: '15507', name: 'Polar Star', rarity: 5, icon: 'UI_EquipIcon_Bow_Worldbane', note: 'BiS' },
-      { id: '15502', name: 'Tonnerre Pulse', rarity: 5, icon: 'UI_EquipIcon_Bow_Amos' },
-      { id: '15410', name: 'Arc Viridescent', rarity: 4, icon: 'UI_EquipIcon_Bow_Viridescent', note: 'F2P' },
+      { id: '15507', name: 'Etoile polaire', rarity: 5, icon: 'UI_EquipIcon_Bow_Worldbane', note: 'BiS' },
+      { id: '15509', name: 'Pulsation du tonnerre', rarity: 5, icon: 'UI_EquipIcon_Bow_Narukami' },
+      { id: '15409', name: 'Arc de chasse verdoyant', rarity: 4, icon: 'UI_EquipIcon_Bow_Viridescent', note: 'F2P' },
     ],
     artifacts: [
       { sets: [{ id: '15018', name: 'Coeur des profondeurs', pieces: 4, icon: 'UI_RelicIcon_15018_4' }], note: 'BiS' },
@@ -350,13 +355,13 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Keqing',
     role: 'Main DPS Electro',
     weapons: [
-      { id: '11510', name: 'Mistsplitter', rarity: 5, icon: 'UI_EquipIcon_Sword_Amenoma', note: 'BiS' },
-      { id: '11405', name: 'Rancour du lion', rarity: 4, icon: 'UI_EquipIcon_Sword_Lapis' },
-      { id: '11401', name: 'Epee de l\'Allee Noire', rarity: 4, icon: 'UI_EquipIcon_Sword_Zephyrus' },
+      { id: '11509', name: 'Reflet de tranche-brume', rarity: 5, icon: 'UI_EquipIcon_Sword_Narukami', note: 'BiS' },
+      { id: '11405', name: 'Rugissement du Lion', rarity: 4, icon: 'UI_EquipIcon_Sword_Rockkiller' },
+      { id: '11409', name: 'Epee noire', rarity: 4, icon: 'UI_EquipIcon_Sword_Bloodstained' },
     ],
     artifacts: [
-      { sets: [{ id: '15015', name: 'Fureur du tonnerre', pieces: 2, icon: 'UI_RelicIcon_15015_4' }, { id: '15001', name: 'Gladiateur', pieces: 2, icon: 'UI_RelicIcon_15001_4' }] },
       { sets: [{ id: '15026', name: 'Reve dore', pieces: 4, icon: 'UI_RelicIcon_15026_4' }], note: 'BiS en Aggravate' },
+      { sets: [{ id: '15015', name: 'Fureur du tonnerre', pieces: 2, icon: 'UI_RelicIcon_15015_4' }, { id: '15001', name: 'Gladiateur', pieces: 2, icon: 'UI_RelicIcon_15001_4' }] },
     ],
     mainStats: { sands: 'ATQ%', goblet: 'Bonus DGT Electro', circlet: 'Taux CRIT / DGT CRIT' },
     subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Maitrise elementaire'],
@@ -368,107 +373,111 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Arlecchino',
     role: 'Main DPS Pyro',
     weapons: [
-      { id: '13507', name: 'Tisseuse de Nuages', rarity: 5, icon: 'UI_EquipIcon_Pole_Homa', note: 'BiS' },
-      { id: '13501', name: 'Baton de Homa', rarity: 5, icon: 'UI_EquipIcon_Pole_Homa' },
-      { id: '13415', name: 'Dragon de l\'Alliage', rarity: 4, icon: 'UI_EquipIcon_Pole_Mori', note: 'Bon choix 4*' },
+      { id: '13512', name: 'Semblance de la lune ecarlate', rarity: 5, icon: 'UI_EquipIcon_Pole_BloodMoon', note: 'BiS signature' },
+      { id: '13505', name: 'Lance de jade ailee', rarity: 5, icon: 'UI_EquipIcon_Pole_Morax' },
+      { id: '13425', name: 'Recompense legitime', rarity: 4, icon: 'UI_EquipIcon_Pole_Vorpal', note: 'Bon choix 4* (Deathmatch)' },
     ],
     artifacts: [
       { sets: [{ id: '15034', name: 'Fragment d\'harmonie', pieces: 4, icon: 'UI_RelicIcon_15034_4' }], note: 'BiS - synergie Bond of Life' },
-      { sets: [{ id: '15006', name: 'Sorciere des flammes ardentes', pieces: 4, icon: 'UI_RelicIcon_15006_4' }], note: 'Alternative Vaporisation' },
+      { sets: [{ id: '15001', name: 'Finale de Gladiateur', pieces: 4, icon: 'UI_RelicIcon_15001_4' }], note: 'Alternative ATQ' },
     ],
     mainStats: { sands: 'ATQ%', goblet: 'Bonus DGT Pyro', circlet: 'Taux CRIT / DGT CRIT' },
-    subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Maitrise elementaire'],
-    tips: 'Arlecchino gagne la Marque de la Mort via son E. Ne la soignez pas pendant son E actif pour maximiser les stacks Bond of Life.',
+    subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'ATQ'],
+    tips: 'Arlecchino gagne la Marque de la Mort via son E. Ne la soignez pas pendant son E actif pour maximiser les stacks Bond of Life. Crimson Moon\'s Semblance est BiS.',
   },
   {
     characterId: '10000106',
     name: 'Mavuika',
     role: 'Main DPS Pyro / Nightsoul',
     weapons: [
-      { id: '12509', name: 'Forteresse de Pierre', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'BiS' },
-      { id: '12405', name: 'Archique', rarity: 4, icon: 'UI_EquipIcon_Claymore_Lapis', note: 'Option F2P' },
+      { id: '12514', name: 'Mille soleils brulants', rarity: 5, icon: 'UI_EquipIcon_Claymore_RadianceSword', note: 'BiS signature' },
+      { id: '12511', name: 'Balise de la mer de roseaux', rarity: 5, icon: 'UI_EquipIcon_Claymore_Deshret' },
+      { id: '12418', name: 'Fleur de mailles', rarity: 4, icon: 'UI_EquipIcon_Claymore_Fleurfair', note: 'Bon 4* ME' },
     ],
     artifacts: [
-      { sets: [{ id: '15036', name: 'Parchemin du heros de la Cite de Cendre', pieces: 4, icon: 'UI_RelicIcon_15036_4' }], note: 'BiS Nightsoul' },
-      { sets: [{ id: '15006', name: 'Sorciere des flammes ardentes', pieces: 4, icon: 'UI_RelicIcon_15006_4' }], note: 'Alternative' },
+      { sets: [{ id: '15037', name: 'Codex Obsidien', pieces: 4, icon: 'UI_RelicIcon_15037_4' }], note: 'BiS Nightsoul' },
+      { sets: [{ id: '15031', name: 'Chasseur de la Marechaussee', pieces: 4, icon: 'UI_RelicIcon_15031_4' }], note: 'Alternative CRIT' },
     ],
-    mainStats: { sands: 'ATQ%', goblet: 'Bonus DGT Pyro', circlet: 'Taux CRIT / DGT CRIT' },
+    mainStats: { sands: 'Maitrise elementaire', goblet: 'Bonus DGT Pyro', circlet: 'Taux CRIT / DGT CRIT' },
     subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Maitrise elementaire'],
-    tips: 'Mavuika est la premiere DPS Pyro a utiliser le systeme Nightsoul. Activez son E pour passer en mode moto et charger le Dechainage.',
+    tips: 'Mavuika est la premiere DPS Pyro a utiliser le systeme Nightsoul. Activez son E pour passer en mode moto et charger le Dechainage. Obsidian Codex BiS.',
   },
   {
     characterId: '10000051',
     name: 'Eula',
     role: 'Main DPS Physique',
     weapons: [
-      { id: '12510', name: 'Pines Redhorn', rarity: 5, icon: 'UI_EquipIcon_Claymore_Itadorimaru', note: 'BiS' },
-      { id: '12504', name: 'Poing du Loup', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound' },
-      { id: '12406', name: 'Serpent Spine', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Excellent 4*' },
+      { id: '12503', name: 'Ode au chant du vent', rarity: 5, icon: 'UI_EquipIcon_Claymore_Widsith', note: 'BiS (Song of Broken Pines)' },
+      { id: '12502', name: 'Mort-du-loup', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound' },
+      { id: '12409', name: 'Ossature du dragon', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Excellent 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15021', name: 'Flamme pale', pieces: 4, icon: 'UI_RelicIcon_15021_4' }], note: 'BiS - stacks via E' },
+      { sets: [{ id: '15021', name: 'Flamme pale', pieces: 2, icon: 'UI_RelicIcon_15021_4' }, { id: '15008', name: 'Chevalier du sang', pieces: 2, icon: 'UI_RelicIcon_15008_4' }], note: 'Alternative 2+2' },
     ],
     mainStats: { sands: 'ATQ%', goblet: 'Bonus DGT Physique', circlet: 'Taux CRIT / DGT CRIT' },
-    subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Recharge d\'energie'],
-    tips: 'Accumulez les stacks Grimheart avec E avant d\'activer Q. La boule de lumiere explose plus fort avec plus de stacks.',
+    subStats: ['Taux CRIT', 'DGT CRIT', 'Recharge d\'energie', 'ATQ%'],
+    tips: 'Accumulez les stacks Grimheart avec E avant d\'activer Q. La boule de lumiere explose plus fort avec plus de stacks. Song of Broken Pines est BiS.',
   },
   {
     characterId: '10000026',
     name: 'Xiao',
     role: 'Main DPS Anemo',
     weapons: [
-      { id: '13505', name: 'Jade du Gardien du ciel', rarity: 5, icon: 'UI_EquipIcon_Pole_Morax', note: 'BiS' },
-      { id: '13504', name: 'Coupe-herbe du Jardinier', rarity: 5, icon: 'UI_EquipIcon_Pole_Kunwu' },
-      { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust', note: 'F2P solide' },
+      { id: '13505', name: 'Lance de jade ailee', rarity: 5, icon: 'UI_EquipIcon_Pole_Morax', note: 'BiS' },
+      { id: '13501', name: 'Baton de Homa', rarity: 5, icon: 'UI_EquipIcon_Pole_Homa' },
+      { id: '13425', name: 'Recompense legitime', rarity: 4, icon: 'UI_EquipIcon_Pole_Vorpal', note: 'Bon 4* (Deathmatch)' },
     ],
     artifacts: [
       { sets: [{ id: '15024', name: 'Vermillon', pieces: 4, icon: 'UI_RelicIcon_15024_4' }], note: 'BiS - ATQ + bonus HP perdu' },
-      { sets: [{ id: '15001', name: 'Finale de Gladiateur', pieces: 4, icon: 'UI_RelicIcon_15001_4' }], note: 'Alternative' },
+      { sets: [{ id: '15027', name: 'Pavilion du desert', pieces: 4, icon: 'UI_RelicIcon_15027_4' }], note: 'Alternative Anemo' },
     ],
     mainStats: { sands: 'ATQ%', goblet: 'Bonus DGT Anemo', circlet: 'Taux CRIT / DGT CRIT' },
     subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Recharge d\'energie'],
-    tips: 'Xiao perd des PV pendant son Q. Utilisez un healeur comme Xianyun pour soigner et booster les Plunge attacks.',
+    tips: 'Xiao perd des PV pendant son Q. Utilisez un healeur comme Xianyun pour soigner et booster les Plunge attacks. Primordial Jade Winged-Spear est BiS.',
   },
   {
     characterId: '10000102',
     name: 'Mualani',
     role: 'Main DPS Hydro / Nightsoul',
     weapons: [
-      { id: '14515', name: 'Fontaine de Jouvence', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
-      { id: '14404', name: 'Thrilling Tales', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Erta', note: 'Option buff equipe' },
+      { id: '14516', name: 'Instant surfant', rarity: 5, icon: 'UI_EquipIcon_Catalyst_MechaPufferfish', note: 'BiS signature (Surf\'s Up)' },
+      { id: '14424', name: 'Jade sacrificiel', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Yue', note: 'Bon 4* PV' },
+      { id: '14410', name: 'Vins et chants', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Outlaw', note: 'Option F2P' },
     ],
     artifacts: [
       { sets: [{ id: '15037', name: 'Codex Obsidien', pieces: 4, icon: 'UI_RelicIcon_15037_4' }], note: 'BiS Nightsoul' },
-      { sets: [{ id: '15031', name: 'Chasseur de la Marechaussee', pieces: 4, icon: 'UI_RelicIcon_15031_4' }], note: 'Alternative' },
+      { sets: [{ id: '15018', name: 'Coeur des profondeurs', pieces: 4, icon: 'UI_RelicIcon_15018_4' }], note: 'Alternative Hydro' },
     ],
-    mainStats: { sands: 'PV%', goblet: 'Bonus DGT Hydro', circlet: 'Taux CRIT / DGT CRIT' },
-    subStats: ['Taux CRIT', 'DGT CRIT', 'PV%', 'Maitrise elementaire'],
-    tips: 'Mualani attaque sur sa planche Nightsoul. Accumulez des Shark Bites pour un maximum de DGT. Scale sur les PV.',
+    mainStats: { sands: 'Maitrise elementaire / PV%', goblet: 'Bonus DGT Hydro', circlet: 'Taux CRIT / DGT CRIT' },
+    subStats: ['Taux CRIT', 'DGT CRIT', 'Maitrise elementaire', 'PV%'],
+    tips: 'Mualani attaque sur sa planche Nightsoul. Accumulez des Shark Bites pour un maximum de DGT. Scale sur les PV. ME sablier recommande.',
   },
   {
     characterId: '10000086',
     name: 'Wriothesley',
     role: 'Main DPS Cryo',
     weapons: [
-      { id: '14511', name: 'Tuchanka Perpetuelle', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
-      { id: '14506', name: 'Serment du vent et de la pluie', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kaleido' },
-      { id: '14413', name: 'Errance etoilee', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
+      { id: '14513', name: 'Supervision de tresorerie', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Wheatley', note: 'BiS (Cashflow Supervision)' },
+      { id: '14512', name: 'Memoire de Tulaytullah', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Alaya' },
+      { id: '14425', name: 'Purete fluide', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Vorpal', note: 'Bon 4* R5' },
     ],
     artifacts: [
       { sets: [{ id: '15031', name: 'Chasseur de la Marechaussee', pieces: 4, icon: 'UI_RelicIcon_15031_4' }], note: 'BiS - CRIT bonus quand HP change' },
+      { sets: [{ id: '15005', name: 'Blizzard Strayer', pieces: 4, icon: 'UI_RelicIcon_15005_4' }], note: 'Alternative Freeze' },
     ],
     mainStats: { sands: 'ATQ%', goblet: 'Bonus DGT Cryo', circlet: 'Taux CRIT / DGT CRIT' },
     subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Recharge d\'energie'],
-    tips: 'Wriothesley perd des PV via son E charge. Gardez-le sous 60% PV pour activer le bonus. Marechaussee CRIT bonus optimal.',
+    tips: 'Wriothesley perd des PV via son E charge. Gardez-le sous 60% PV pour activer le bonus. Marechaussee Hunter CRIT bonus optimal.',
   },
   {
     characterId: '10000098',
     name: 'Clorinde',
     role: 'Main DPS Electro',
     weapons: [
-      { id: '11512', name: 'Flamme du Crepuscule', rarity: 5, icon: 'UI_EquipIcon_Sword_Morax', note: 'BiS' },
-      { id: '11509', name: 'Haran Geppaku Futsu', rarity: 5, icon: 'UI_EquipIcon_Sword_Narukami' },
-      { id: '11416', name: 'Faucheur Fleuve', rarity: 4, icon: 'UI_EquipIcon_Sword_Youtou', note: 'Bon 4*' },
+      { id: '11515', name: 'Absolution', rarity: 5, icon: 'UI_EquipIcon_Sword_Estoc', note: 'BiS signature' },
+      { id: '11510', name: 'Lune ondulante de Futsu', rarity: 5, icon: 'UI_EquipIcon_Sword_Amenoma' },
+      { id: '11425', name: 'Final des profondeurs', rarity: 4, icon: 'UI_EquipIcon_Sword_Vorpal', note: 'Bon 4* R5' },
     ],
     artifacts: [
       { sets: [{ id: '15034', name: 'Fragment d\'harmonie', pieces: 4, icon: 'UI_RelicIcon_15034_4' }], note: 'BiS Bond of Life' },
@@ -483,9 +492,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Lyney',
     role: 'Main DPS Pyro',
     weapons: [
-      { id: '15510', name: 'Noblesse Ecarlate', rarity: 5, icon: 'UI_EquipIcon_Bow_Elegy', note: 'BiS' },
-      { id: '15507', name: 'Polar Star', rarity: 5, icon: 'UI_EquipIcon_Bow_Worldbane' },
-      { id: '15403', name: 'Prototype Crescent', rarity: 4, icon: 'UI_EquipIcon_Bow_Proto', note: 'F2P efficace' },
+      { id: '15512', name: 'La premiere grande magie', rarity: 5, icon: 'UI_EquipIcon_Bow_Pledge', note: 'BiS signature' },
+      { id: '15508', name: 'Simulacre d\'eau', rarity: 5, icon: 'UI_EquipIcon_Bow_Kirin' },
+      { id: '15406', name: 'Lune paisible (prototype)', rarity: 4, icon: 'UI_EquipIcon_Bow_Proto', note: 'F2P efficace' },
     ],
     artifacts: [
       { sets: [{ id: '15031', name: 'Chasseur de la Marechaussee', pieces: 4, icon: 'UI_RelicIcon_15031_4' }], note: 'BiS - CRIT bonus' },
@@ -499,9 +508,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Navia',
     role: 'Main DPS Geo',
     weapons: [
-      { id: '12509', name: 'Crepuscule', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'BiS' },
-      { id: '12510', name: 'Pines Redhorn', rarity: 5, icon: 'UI_EquipIcon_Claymore_Itadorimaru' },
-      { id: '12406', name: 'Serpent Spine', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Excellent 4*' },
+      { id: '12512', name: 'Condamneur', rarity: 5, icon: 'UI_EquipIcon_Claymore_GoldenVerdict', note: 'BiS signature (Verdict)' },
+      { id: '12409', name: 'Ossature du dragon', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Excellent 4* R5' },
+      { id: '12510', name: 'Brise-pierre de corne rouge', rarity: 5, icon: 'UI_EquipIcon_Claymore_Itadorimaru' },
     ],
     artifacts: [
       { sets: [{ id: '15033', name: 'Nuit de murmures', pieces: 4, icon: 'UI_RelicIcon_15033_4' }], note: 'BiS' },
@@ -516,26 +525,26 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Yae Miko',
     role: 'Sub DPS Electro',
     weapons: [
-      { id: '14510', name: 'Esprits Kagura', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kunwu', note: 'BiS' },
-      { id: '14511', name: 'Mille nuits flottantes', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus' },
-      { id: '14413', name: 'Errance etoilee', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
+      { id: '14509', name: 'Verite de Kagura', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Narukami', note: 'BiS signature' },
+      { id: '14501', name: 'Atlas de la Voute d\'Azur', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Dvalin' },
+      { id: '14405', name: 'Perle solaire', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Resurrection', note: 'Bon 4*' },
     ],
     artifacts: [
-      { sets: [{ id: '15026', name: 'Reve dore', pieces: 4, icon: 'UI_RelicIcon_15026_4' }], note: 'BiS Aggravate' },
-      { sets: [{ id: '15015', name: 'Fureur du tonnerre', pieces: 4, icon: 'UI_RelicIcon_15015_4' }], note: 'Alternative electro pur' },
+      { sets: [{ id: '15020', name: 'Embleme du destin brise', pieces: 4, icon: 'UI_RelicIcon_15020_4' }], note: 'BiS Dechainage' },
+      { sets: [{ id: '15026', name: 'Reve dore', pieces: 4, icon: 'UI_RelicIcon_15026_4' }], note: 'Alternative Aggravate' },
     ],
-    mainStats: { sands: 'ATQ%', goblet: 'Bonus DGT Electro', circlet: 'Taux CRIT / DGT CRIT' },
-    subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Maitrise elementaire'],
-    tips: 'Posez les 3 totems Kitsune puis activez Q pour reset. Yae excelle en Aggravate avec Nahida ou Alhaitham.',
+    mainStats: { sands: 'Recharge d\'energie / ATQ%', goblet: 'Bonus DGT Electro', circlet: 'Taux CRIT / DGT CRIT' },
+    subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Recharge d\'energie'],
+    tips: 'Posez les 3 totems Kitsune puis activez Q pour reset. Yae excelle en Aggravate avec Nahida ou Alhaitham. Kagura\'s Verity est BiS.',
   },
   {
     characterId: '10000049',
     name: 'Yoimiya',
     role: 'Main DPS Pyro',
     weapons: [
-      { id: '15502', name: 'Thundering Pulse', rarity: 5, icon: 'UI_EquipIcon_Bow_Amos', note: 'BiS' },
-      { id: '15507', name: 'Polar Star', rarity: 5, icon: 'UI_EquipIcon_Bow_Worldbane' },
-      { id: '15403', name: 'Prototype Crescent', rarity: 4, icon: 'UI_EquipIcon_Bow_Proto', note: 'Option F2P' },
+      { id: '15509', name: 'Pulsation du tonnerre', rarity: 5, icon: 'UI_EquipIcon_Bow_Narukami', note: 'BiS' },
+      { id: '15507', name: 'Etoile polaire', rarity: 5, icon: 'UI_EquipIcon_Bow_Worldbane' },
+      { id: '15406', name: 'Lune paisible (prototype)', rarity: 4, icon: 'UI_EquipIcon_Bow_Proto', note: 'Option F2P' },
     ],
     artifacts: [
       { sets: [{ id: '15019', name: 'Reminiscence nostalgique', pieces: 4, icon: 'UI_RelicIcon_15019_4' }], note: 'BiS - consome energie pour Normal DMG' },
@@ -550,9 +559,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Klee',
     role: 'Main DPS Pyro',
     weapons: [
-      { id: '14504', name: 'Magie de l\'Etoile perdue', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kunwu', note: 'BiS' },
-      { id: '14508', name: 'Flamme Cramoisie', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus' },
-      { id: '14413', name: 'Errance etoilee', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
+      { id: '14504', name: 'Chaines mortelles', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kunwu', note: 'BiS (Lost Prayer)' },
+      { id: '14505', name: 'Splendeur de l\'azur', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Morax', note: 'Skyward Atlas' },
+      { id: '14413', name: 'Contes de Dodoco', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15006', name: 'Sorciere des flammes ardentes', pieces: 4, icon: 'UI_RelicIcon_15006_4' }], note: 'BiS Pyro DPS' },
@@ -566,9 +575,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Albedo',
     role: 'Sub DPS Geo',
     weapons: [
-      { id: '11513', name: 'Cingulee de Crenele', rarity: 5, icon: 'UI_EquipIcon_Sword_Morax', note: 'BiS signature' },
-      { id: '11509', name: 'Haran Geppaku Futsu', rarity: 5, icon: 'UI_EquipIcon_Sword_Narukami' },
-      { id: '11414', name: 'Harbinger of Dawn', rarity: 3, icon: 'UI_EquipIcon_Sword_Falcon', note: 'Excellent F2P si >90% PV' },
+      { id: '11516', name: 'Chanson de patrouille de sommet', rarity: 5, icon: 'UI_EquipIcon_Sword_XochitlsTube', note: 'BiS signature (Peak Patrol Song)' },
+      { id: '11514', name: 'Uraku Misugiri', rarity: 5, icon: 'UI_EquipIcon_Sword_Needle' },
+      { id: '11415', name: 'Fuseau de cinabre', rarity: 4, icon: 'UI_EquipIcon_Sword_Opus', note: 'Excellent F2P si >90% PV' },
     ],
     artifacts: [
       { sets: [{ id: '15022', name: 'Coquille', pieces: 4, icon: 'UI_RelicIcon_15022_4' }], note: 'BiS DEF+Geo scaling' },
@@ -582,9 +591,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Kamisato Ayato',
     role: 'Main DPS Hydro',
     weapons: [
-      { id: '11511', name: 'Haran Geppaku Futsu', rarity: 5, icon: 'UI_EquipIcon_Sword_Narukami', note: 'BiS' },
-      { id: '11509', name: 'Mistsplitter', rarity: 5, icon: 'UI_EquipIcon_Sword_Amenoma' },
-      { id: '11412', name: 'Amenoma Kageuchi', rarity: 4, icon: 'UI_EquipIcon_Sword_Bakufu', note: 'Bon F2P' },
+      { id: '11510', name: 'Lune ondulante de Futsu', rarity: 5, icon: 'UI_EquipIcon_Sword_Amenoma', note: 'BiS (Haran Geppaku Futsu)' },
+      { id: '11509', name: 'Reflet de tranche-brume', rarity: 5, icon: 'UI_EquipIcon_Sword_Narukami' },
+      { id: '11414', name: 'Lame kageuchi d\'Amenoma', rarity: 4, icon: 'UI_EquipIcon_Sword_Bakufu', note: 'Bon F2P' },
     ],
     artifacts: [
       { sets: [{ id: '15018', name: 'Coeur des profondeurs', pieces: 4, icon: 'UI_RelicIcon_15018_4' }], note: 'BiS' },
@@ -599,9 +608,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Cyno',
     role: 'Main DPS Electro',
     weapons: [
-      { id: '13509', name: 'L\'Imperissable Lune', rarity: 5, icon: 'UI_EquipIcon_Pole_Narukami', note: 'BiS' },
-      { id: '13504', name: 'Percee des cieux', rarity: 5, icon: 'UI_EquipIcon_Pole_Kunwu' },
-      { id: '13415', name: 'Drachenlance', rarity: 4, icon: 'UI_EquipIcon_Pole_Mori', note: 'Bon 4*' },
+      { id: '13509', name: 'Lumiere du faucheur', rarity: 5, icon: 'UI_EquipIcon_Pole_Narukami', note: 'BiS (Engulfing Lightning)' },
+      { id: '13504', name: 'Perceur prismatique', rarity: 5, icon: 'UI_EquipIcon_Pole_Kunwu' },
+      { id: '13415', name: 'La prise', rarity: 4, icon: 'UI_EquipIcon_Pole_Mori', note: 'Bon 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15026', name: 'Reve dore', pieces: 4, icon: 'UI_RelicIcon_15026_4' }], note: 'BiS Aggravate' },
@@ -616,9 +625,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Tighnari',
     role: 'Main DPS Dendro',
     weapons: [
-      { id: '15509', name: 'Arc des Vignes d\'Emeraude', rarity: 5, icon: 'UI_EquipIcon_Bow_Worldbane', note: 'BiS' },
-      { id: '15502', name: 'Amos', rarity: 5, icon: 'UI_EquipIcon_Bow_Amos' },
-      { id: '15403', name: 'Prototype Crescent', rarity: 4, icon: 'UI_EquipIcon_Bow_Proto', note: 'Bon F2P' },
+      { id: '15511', name: 'La voie du chasseur', rarity: 5, icon: 'UI_EquipIcon_Bow_Ayus', note: 'BiS (Hunter\'s Path)' },
+      { id: '15502', name: 'Arc d\'Amos', rarity: 5, icon: 'UI_EquipIcon_Bow_Amos' },
+      { id: '15406', name: 'Lune paisible (prototype)', rarity: 4, icon: 'UI_EquipIcon_Bow_Proto', note: 'Bon F2P' },
     ],
     artifacts: [
       { sets: [{ id: '15026', name: 'Reve dore', pieces: 4, icon: 'UI_RelicIcon_15026_4' }], note: 'BiS Spread' },
@@ -633,9 +642,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Nomade',
     role: 'Main DPS Anemo',
     weapons: [
-      { id: '14514', name: 'Caducee de l\'Orage Tulua', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
-      { id: '14504', name: 'Kagura de la verite sacree', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kunwu' },
-      { id: '14413', name: 'Errance etoilee', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
+      { id: '14514', name: 'Tome du flux eternel', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Iudex', note: 'BiS (Tome of the Eternal Flow)' },
+      { id: '14509', name: 'Verite de Kagura', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Narukami' },
+      { id: '14413', name: 'Contes de Dodoco', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15027', name: 'Pavilion du desert', pieces: 4, icon: 'UI_RelicIcon_15027_4' }], note: 'BiS Anemo DPS' },
@@ -649,9 +658,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Kinich',
     role: 'Main DPS Dendro',
     weapons: [
-      { id: '12512', name: 'Balafre de la Foret', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'BiS' },
-      { id: '12510', name: 'Pines Redhorn', rarity: 5, icon: 'UI_EquipIcon_Claymore_Itadorimaru' },
-      { id: '12406', name: 'Serpent Spine', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Bon 4*' },
+      { id: '12512', name: 'Condamneur', rarity: 5, icon: 'UI_EquipIcon_Claymore_GoldenVerdict', note: 'BiS (Verdict)' },
+      { id: '12510', name: 'Brise-pierre de corne rouge', rarity: 5, icon: 'UI_EquipIcon_Claymore_Itadorimaru' },
+      { id: '12409', name: 'Ossature du dragon', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Bon 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15037', name: 'Codex Obsidien', pieces: 4, icon: 'UI_RelicIcon_15037_4' }], note: 'BiS Nightsoul' },
@@ -667,41 +676,41 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Venti',
     role: 'Support / VV Shred',
     weapons: [
-      { id: '15508', name: 'Elegie pour la fin', rarity: 5, icon: 'UI_EquipIcon_Bow_Elegy', note: 'BiS support EM' },
-      { id: '15502', name: 'Amos', rarity: 5, icon: 'UI_EquipIcon_Bow_Amos' },
-      { id: '15401', name: 'Arc de Favonius', rarity: 4, icon: 'UI_EquipIcon_Bow_Zephyrus', note: 'Generateur de particules' },
+      { id: '15515', name: 'Les chroniques de l\'aube', rarity: 5, icon: 'UI_EquipIcon_Bow_Arianna', note: 'BiS (Daybreak Chronicles)' },
+      { id: '15507', name: 'Etoile polaire', rarity: 5, icon: 'UI_EquipIcon_Bow_Worldbane' },
+      { id: '15401', name: 'Arc de chasse de Favonius', rarity: 4, icon: 'UI_EquipIcon_Bow_Zephyrus', note: 'Generateur de particules' },
     ],
     artifacts: [
       { sets: [{ id: '15002', name: 'Ombre de la Verte Chasseuse', pieces: 4, icon: 'UI_RelicIcon_15002_4' }], note: 'BiS VV shred' },
     ],
-    mainStats: { sands: 'Maitrise elementaire', goblet: 'Maitrise elementaire', circlet: 'Maitrise elementaire' },
-    subStats: ['Maitrise elementaire', 'Recharge d\'energie', 'ATQ%', 'Taux CRIT'],
-    tips: 'Venti aspire ennemis legers dans son Q et absorbee un element pour DGT supplementaires. Meilleur groupeur du jeu.',
+    mainStats: { sands: 'ATQ%', goblet: 'Bonus DGT Anemo', circlet: 'Taux CRIT / DGT CRIT' },
+    subStats: ['Taux CRIT', 'DGT CRIT', 'ATQ%', 'Maitrise elementaire'],
+    tips: 'Venti aspire ennemis legers dans son Q et absorbe un element pour DGT supplementaires. Meilleur groupeur du jeu. Daybreak Chronicles est BiS.',
   },
   {
     characterId: '10000063',
     name: 'Shenhe',
     role: 'Support Cryo / Buffer',
     weapons: [
-      { id: '13504', name: 'Percee des cieux', rarity: 5, icon: 'UI_EquipIcon_Pole_Kunwu', note: 'BiS' },
-      { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust', note: 'F2P viable' },
-      { id: '13405', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Santika', note: 'Pour la RE' },
+      { id: '13507', name: 'Etouffeur de calamites', rarity: 5, icon: 'UI_EquipIcon_Pole_Santika', note: 'BiS signature (Calamity Queller)' },
+      { id: '13504', name: 'Perceur prismatique', rarity: 5, icon: 'UI_EquipIcon_Pole_Kunwu' },
+      { id: '13407', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Zephyrus', note: 'Pour la RE' },
     ],
     artifacts: [
       { sets: [{ id: '15007', name: 'Ancien rituel royal', pieces: 4, icon: 'UI_RelicIcon_15007_4' }], note: 'BiS pour le buff Dechainage' },
       { sets: [{ id: '15001', name: 'Finale de Gladiateur', pieces: 2, icon: 'UI_RelicIcon_15001_4' }, { id: '15007', name: 'Noblesse', pieces: 2, icon: 'UI_RelicIcon_15007_4' }] },
     ],
-    mainStats: { sands: 'ATQ%', goblet: 'ATQ%', circlet: 'ATQ%' },
+    mainStats: { sands: 'ATQ% / Recharge d\'energie', goblet: 'ATQ%', circlet: 'ATQ%' },
     subStats: ['ATQ%', 'Recharge d\'energie', 'Taux CRIT', 'DGT CRIT'],
-    tips: 'Shenhe amplifie les DGT Cryo de l\'equipe via les charges Icy Quill. Priorite ATQ pour maximiser le buff.',
+    tips: 'Shenhe amplifie les DGT Cryo de l\'equipe via les charges Icy Quill. Priorite ATQ pour maximiser le buff. Calamity Queller est BiS.',
   },
   {
     characterId: '10000093',
     name: 'Xianyun',
     role: 'Support Anemo / Buff Plunge',
     weapons: [
-      { id: '14506', name: 'Serment Lunaire', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kaleido', note: 'BiS' },
-      { id: '14414', name: 'Prototype Amber', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Truelens', note: 'F2P heal' },
+      { id: '14506', name: 'Lueur de la lune eternelle', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kaleido', note: 'BiS (Everlasting Moonglow)' },
+      { id: '14406', name: 'Malice (prototype)', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Proto', note: 'F2P heal' },
     ],
     artifacts: [
       { sets: [{ id: '15002', name: 'Ombre de la Verte Chasseuse', pieces: 4, icon: 'UI_RelicIcon_15002_4' }], note: 'VV shred + heal' },
@@ -716,12 +725,13 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Xilonen',
     role: 'Support Geo / Buffer Nightsoul',
     weapons: [
-      { id: '11515', name: 'Tailleur de Nuages', rarity: 5, icon: 'UI_EquipIcon_Sword_Morax', note: 'BiS' },
+      { id: '11516', name: 'Chanson de patrouille de sommet', rarity: 5, icon: 'UI_EquipIcon_Sword_XochitlsTube', note: 'BiS (Peak Patrol Song)' },
+      { id: '11503', name: 'Serment de la liberte', rarity: 5, icon: 'UI_EquipIcon_Sword_Widsith' },
       { id: '11401', name: 'Epee de Favonius', rarity: 4, icon: 'UI_EquipIcon_Sword_Zephyrus', note: 'Pour la RE' },
     ],
     artifacts: [
-      { sets: [{ id: '15037', name: 'Codex Obsidien', pieces: 4, icon: 'UI_RelicIcon_15037_4' }], note: 'BiS Nightsoul' },
-      { sets: [{ id: '15017', name: 'Tenacite du Millelithe', pieces: 4, icon: 'UI_RelicIcon_15017_4' }], note: 'Alternative buff ATQ' },
+      { sets: [{ id: '15036', name: 'Parchemin du heros', pieces: 4, icon: 'UI_RelicIcon_15036_4' }], note: 'BiS Nightsoul' },
+      { sets: [{ id: '15014', name: 'Eclat de jade', pieces: 4, icon: 'UI_RelicIcon_15014_4' }], note: 'Alternative Geo RES' },
     ],
     mainStats: { sands: 'DEF%', goblet: 'DEF%', circlet: 'DEF%' },
     subStats: ['DEF%', 'DEF', 'Recharge d\'energie', 'Taux CRIT'],
@@ -732,9 +742,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Arataki Itto',
     role: 'Main DPS Geo',
     weapons: [
-      { id: '12510', name: 'Pines Redhorn', rarity: 5, icon: 'UI_EquipIcon_Claymore_Itadorimaru', note: 'BiS - DEF scaling' },
-      { id: '12506', name: 'Orgueil du Ciel', rarity: 5, icon: 'UI_EquipIcon_Claymore_Dvalin' },
-      { id: '12406', name: 'Serpent Spine', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Bon 4*' },
+      { id: '12510', name: 'Brise-pierre de corne rouge', rarity: 5, icon: 'UI_EquipIcon_Claymore_Itadorimaru', note: 'BiS - DEF scaling' },
+      { id: '12409', name: 'Ossature du dragon', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Excellent 4*' },
+      { id: '12512', name: 'Condamneur', rarity: 5, icon: 'UI_EquipIcon_Claymore_GoldenVerdict' },
     ],
     artifacts: [
       { sets: [{ id: '15022', name: 'Coquille', pieces: 4, icon: 'UI_RelicIcon_15022_4' }], note: 'BiS DEF+Geo' },
@@ -748,9 +758,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Baizhu',
     role: 'Healer Dendro / Support',
     weapons: [
-      { id: '14511', name: 'Mille nuits flottantes', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
-      { id: '14414', name: 'Prototype Amber', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Truelens', note: 'F2P heal' },
-      { id: '14404', name: 'Thrilling Tales', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Erta', note: 'Buff ATQ equipe' },
+      { id: '14511', name: 'Mille reves flottants', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
+      { id: '14406', name: 'Malice (prototype)', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Proto', note: 'F2P heal' },
+      { id: '14302', name: 'Histoire des chasseurs de dragon', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Pulpfic', note: 'Buff ATQ equipe' },
     ],
     artifacts: [
       { sets: [{ id: '15025', name: 'Souvenir de foret', pieces: 4, icon: 'UI_RelicIcon_15025_4' }], note: 'BiS - Dendro RES shred' },
@@ -766,7 +776,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Qiqi',
     role: 'Healer Cryo',
     weapons: [
-      { id: '11402', name: 'Epee de Sacrifices', rarity: 4, icon: 'UI_EquipIcon_Sword_Troupe', note: 'BiS pour relancer E' },
+      { id: '11403', name: 'Epee rituelle', rarity: 4, icon: 'UI_EquipIcon_Sword_Fossil', note: 'BiS pour relancer E' },
       { id: '11401', name: 'Epee de Favonius', rarity: 4, icon: 'UI_EquipIcon_Sword_Zephyrus' },
     ],
     artifacts: [
@@ -782,8 +792,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Xinyan',
     role: 'Support / Shield Pyro',
     weapons: [
-      { id: '12406', name: 'Serpent Spine', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'BiS DPS' },
-      { id: '12405', name: 'Archique', rarity: 4, icon: 'UI_EquipIcon_Claymore_Lapis' },
+      { id: '12409', name: 'Ossature du dragon', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'BiS DPS' },
+      { id: '12406', name: 'Espadon (prototype)', rarity: 4, icon: 'UI_EquipIcon_Claymore_Proto' },
     ],
     artifacts: [
       { sets: [{ id: '15017', name: 'Tenacite du Millelithe', pieces: 4, icon: 'UI_RelicIcon_15017_4' }], note: 'Support shield' },
@@ -798,7 +808,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     role: 'Support Pyro / Utilitaire',
     weapons: [
       { id: '15401', name: 'Arc de Favonius', rarity: 4, icon: 'UI_EquipIcon_Bow_Zephyrus', note: 'Pour generer des particules' },
-      { id: '15301', name: 'Frondeur', rarity: 3, icon: 'UI_EquipIcon_Bow_Sling' },
+      { id: '15304', name: 'Lance-pierres', rarity: 3, icon: 'UI_EquipIcon_Bow_Sling' },
     ],
     artifacts: [
       { sets: [{ id: '15007', name: 'Ancien rituel royal', pieces: 4, icon: 'UI_RelicIcon_15007_4' }], note: 'Pour buff equipe' },
@@ -813,8 +823,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Barbara',
     role: 'Healer Hydro',
     weapons: [
-      { id: '14404', name: 'Thrilling Tales', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Erta', note: 'BiS - buff ATQ 48%' },
-      { id: '14414', name: 'Prototype Amber', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Truelens', note: 'Heal supplementaire' },
+      { id: '14302', name: 'Histoire des chasseurs de dragon', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Pulpfic', note: 'BiS - buff ATQ 48%' },
+      { id: '14406', name: 'Malice (prototype)', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Proto', note: 'Heal supplementaire' },
     ],
     artifacts: [
       { sets: [{ id: '15023', name: 'Coquillage', pieces: 4, icon: 'UI_RelicIcon_15023_4' }], note: 'BiS healer' },
@@ -830,7 +840,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     role: 'Shielder / Healer Cryo',
     weapons: [
       { id: '15401', name: 'Arc de Favonius', rarity: 4, icon: 'UI_EquipIcon_Bow_Zephyrus', note: 'BiS particules' },
-      { id: '15406', name: 'Arc de Sacrifices', rarity: 4, icon: 'UI_EquipIcon_Bow_Viridescent', note: 'Reset E' },
+      { id: '15403', name: 'Arc rituel', rarity: 4, icon: 'UI_EquipIcon_Bow_Fossil', note: 'Reset E' },
     ],
     artifacts: [
       { sets: [{ id: '15007', name: 'Ancien rituel royal', pieces: 4, icon: 'UI_RelicIcon_15007_4' }], note: 'Buff Dechainage equipe' },
@@ -845,8 +855,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Charlotte',
     role: 'Healer Cryo',
     weapons: [
-      { id: '14414', name: 'Prototype Amber', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Truelens', note: 'F2P heal' },
-      { id: '14404', name: 'Thrilling Tales', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Erta', note: 'Buff ATQ equipe' },
+      { id: '14406', name: 'Malice (prototype)', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Proto', note: 'F2P heal' },
+      { id: '14302', name: 'Histoire des chasseurs de dragon', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Pulpfic', note: 'Buff ATQ equipe' },
     ],
     artifacts: [
       { sets: [{ id: '15007', name: 'Ancien rituel royal', pieces: 4, icon: 'UI_RelicIcon_15007_4' }], note: 'Buff Dechainage' },
@@ -861,7 +871,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Chevreuse',
     role: 'Support / Overload Buffer',
     weapons: [
-      { id: '13405', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Santika', note: 'Particules' },
+      { id: '13407', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Zephyrus', note: 'Particules' },
       { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust' },
     ],
     artifacts: [
@@ -876,8 +886,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Citlali',
     role: 'Support Cryo / Buffer Nightsoul',
     weapons: [
-      { id: '14511', name: 'Mille nuits flottantes', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
-      { id: '14414', name: 'Prototype Amber', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Truelens', note: 'F2P heal' },
+      { id: '14511', name: 'Mille reves flottants', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
+      { id: '14406', name: 'Malice (prototype)', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Proto', note: 'F2P heal' },
     ],
     artifacts: [
       { sets: [{ id: '15007', name: 'Ancien rituel royal', pieces: 4, icon: 'UI_RelicIcon_15007_4' }], note: 'Buff equipe' },
@@ -892,8 +902,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Chongyun',
     role: 'Sub DPS / Support Cryo',
     weapons: [
-      { id: '12406', name: 'Serpent Spine', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'BiS' },
-      { id: '12405', name: 'Archique', rarity: 4, icon: 'UI_EquipIcon_Claymore_Lapis', note: 'F2P' },
+      { id: '12409', name: 'Ossature du dragon', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'BiS' },
+      { id: '12406', name: 'Espadon (prototype)', rarity: 4, icon: 'UI_EquipIcon_Claymore_Proto', note: 'F2P' },
     ],
     artifacts: [
       { sets: [{ id: '15007', name: 'Ancien rituel royal', pieces: 4, icon: 'UI_RelicIcon_15007_4' }], note: 'BiS support' },
@@ -908,7 +918,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Faruzan',
     role: 'Support Anemo / Buffer',
     weapons: [
-      { id: '15508', name: 'Elegie pour la fin', rarity: 5, icon: 'UI_EquipIcon_Bow_Elegy', note: 'BiS' },
+      { id: '15503', name: 'Ultime soupir', rarity: 5, icon: 'UI_EquipIcon_Bow_Widsith', note: 'BiS (Elegie pour la fin)' },
       { id: '15401', name: 'Arc de Favonius', rarity: 4, icon: 'UI_EquipIcon_Bow_Zephyrus', note: 'Generateur particules' },
     ],
     artifacts: [
@@ -925,7 +935,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     role: 'Support Geo / Buffer DEF',
     weapons: [
       { id: '15401', name: 'Arc de Favonius', rarity: 4, icon: 'UI_EquipIcon_Bow_Zephyrus', note: 'Particules' },
-      { id: '15407', name: 'Arc de Sacrifices', rarity: 4, icon: 'UI_EquipIcon_Bow_Exotic', note: 'Reset E' },
+      { id: '15407', name: 'Arc a poulies', rarity: 4, icon: 'UI_EquipIcon_Bow_Exotic', note: 'F2P Geo' },
     ],
     artifacts: [
       { sets: [{ id: '15007', name: 'Ancien rituel royal', pieces: 4, icon: 'UI_RelicIcon_15007_4' }], note: 'Buff Dechainage' },
@@ -941,7 +951,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     role: 'Healer Dendro',
     weapons: [
       { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust', note: 'F2P RE' },
-      { id: '13405', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Santika', note: 'Particules' },
+      { id: '13407', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Zephyrus', note: 'Particules' },
     ],
     artifacts: [
       { sets: [{ id: '15025', name: 'Souvenir de foret', pieces: 4, icon: 'UI_RelicIcon_15025_4' }], note: 'BiS Dendro shred' },
@@ -956,7 +966,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Yun Jin',
     role: 'Support Normal ATQ',
     weapons: [
-      { id: '13405', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Santika', note: 'Particules' },
+      { id: '13407', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Zephyrus', note: 'Particules' },
       { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust' },
     ],
     artifacts: [
@@ -971,7 +981,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Candace',
     role: 'Support Hydro / Infusion',
     weapons: [
-      { id: '13405', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Santika', note: 'Particules' },
+      { id: '13407', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Zephyrus', note: 'Particules' },
       { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust' },
     ],
     artifacts: [
@@ -986,7 +996,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Kirara',
     role: 'Shielder Dendro',
     weapons: [
-      { id: '11402', name: 'Epee de Sacrifices', rarity: 4, icon: 'UI_EquipIcon_Sword_Troupe', note: 'Reset E' },
+      { id: '11403', name: 'Epee rituelle', rarity: 4, icon: 'UI_EquipIcon_Sword_Fossil', note: 'Reset E' },
       { id: '11401', name: 'Epee de Favonius', rarity: 4, icon: 'UI_EquipIcon_Sword_Zephyrus', note: 'Particules' },
     ],
     artifacts: [
@@ -1017,7 +1027,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Mika',
     role: 'Healer / Buffer ATQ SPD',
     weapons: [
-      { id: '13405', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Santika', note: 'Particules' },
+      { id: '13407', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Zephyrus', note: 'Particules' },
       { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust' },
     ],
     artifacts: [
@@ -1033,7 +1043,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Nilou',
     role: 'Support / DPS Bloom',
     weapons: [
-      { id: '11511', name: 'Clef des eaux profondes', rarity: 5, icon: 'UI_EquipIcon_Sword_Deshret', note: 'BiS' },
+      { id: '11511', name: 'Cle de Khaj-Nisut', rarity: 5, icon: 'UI_EquipIcon_Sword_Deshret', note: 'BiS PV scaling' },
       { id: '11401', name: 'Epee de Favonius', rarity: 4, icon: 'UI_EquipIcon_Sword_Zephyrus', note: 'Particules' },
     ],
     artifacts: [
@@ -1049,7 +1059,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Sigewinne',
     role: 'Healer Hydro',
     weapons: [
-      { id: '15509', name: 'Serment des eaux calmes', rarity: 5, icon: 'UI_EquipIcon_Bow_Worldbane', note: 'BiS' },
+      { id: '15513', name: 'Corde de pluie blanche', rarity: 5, icon: 'UI_EquipIcon_Bow_Arcdange', note: 'BiS signature' },
       { id: '15401', name: 'Arc de Favonius', rarity: 4, icon: 'UI_EquipIcon_Bow_Zephyrus', note: 'Particules' },
     ],
     artifacts: [
@@ -1064,7 +1074,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Kujou Sara',
     role: 'Support Electro / Buffer ATQ',
     weapons: [
-      { id: '15508', name: 'Elegie pour la fin', rarity: 5, icon: 'UI_EquipIcon_Bow_Elegy', note: 'BiS buff EM' },
+      { id: '15503', name: 'Ultime soupir', rarity: 5, icon: 'UI_EquipIcon_Bow_Widsith', note: 'BiS buff EM (Elegie pour la fin)' },
       { id: '15401', name: 'Arc de Favonius', rarity: 4, icon: 'UI_EquipIcon_Bow_Zephyrus', note: 'Particules' },
     ],
     artifacts: [
@@ -1080,7 +1090,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Thomas',
     role: 'Shielder / Support Pyro',
     weapons: [
-      { id: '13405', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Santika', note: 'Particules' },
+      { id: '13407', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Zephyrus', note: 'Particules' },
       { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust' },
     ],
     artifacts: [
@@ -1096,8 +1106,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Sayu',
     role: 'Healer / Support Anemo',
     weapons: [
-      { id: '12405', name: 'Archique', rarity: 4, icon: 'UI_EquipIcon_Claymore_Lapis', note: 'F2P' },
-      { id: '12401', name: 'Claymore de Favonius', rarity: 4, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'Particules' },
+      { id: '12406', name: 'Espadon (prototype)', rarity: 4, icon: 'UI_EquipIcon_Claymore_Proto', note: 'F2P' },
+      { id: '12401', name: 'Espadon de Favonius', rarity: 4, icon: 'UI_EquipIcon_Claymore_Zephyrus', note: 'Particules' },
     ],
     artifacts: [
       { sets: [{ id: '15002', name: 'Ombre de la Verte Chasseuse', pieces: 4, icon: 'UI_RelicIcon_15002_4' }], note: 'BiS VV shred' },
@@ -1127,9 +1137,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Beidou',
     role: 'Sub DPS Electro / Counter',
     weapons: [
-      { id: '12504', name: 'Poing du Loup', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'BiS' },
-      { id: '12406', name: 'Serpent Spine', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Excellent 4*' },
-      { id: '12405', name: 'Archique', rarity: 4, icon: 'UI_EquipIcon_Claymore_Lapis', note: 'F2P' },
+      { id: '12504', name: 'Lame brute', rarity: 5, icon: 'UI_EquipIcon_Claymore_Kunwu', note: 'BiS (Skyward Pride)' },
+      { id: '12409', name: 'Ossature du dragon', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Excellent 4*' },
+      { id: '12406', name: 'Espadon (prototype)', rarity: 4, icon: 'UI_EquipIcon_Claymore_Proto', note: 'F2P' },
     ],
     artifacts: [
       { sets: [{ id: '15020', name: 'Embleme du destin brise', pieces: 4, icon: 'UI_RelicIcon_15020_4' }], note: 'BiS Dechainage' },
@@ -1143,9 +1153,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Razor',
     role: 'Main DPS Physique',
     weapons: [
-      { id: '12504', name: 'Poing du Loup', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'BiS' },
-      { id: '12406', name: 'Serpent Spine', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Excellent 4*' },
-      { id: '12405', name: 'Archique', rarity: 4, icon: 'UI_EquipIcon_Claymore_Lapis', note: 'F2P' },
+      { id: '12504', name: 'Lame brute', rarity: 5, icon: 'UI_EquipIcon_Claymore_Kunwu', note: 'BiS (Skyward Pride)' },
+      { id: '12409', name: 'Ossature du dragon', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Excellent 4*' },
+      { id: '12406', name: 'Espadon (prototype)', rarity: 4, icon: 'UI_EquipIcon_Claymore_Proto', note: 'F2P' },
     ],
     artifacts: [
       { sets: [{ id: '15021', name: 'Flamme pale', pieces: 4, icon: 'UI_RelicIcon_15021_4' }], note: 'BiS Physique' },
@@ -1159,9 +1169,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Rosaria',
     role: 'Sub DPS Cryo / Buffer CRIT',
     weapons: [
-      { id: '13504', name: 'Percee des cieux', rarity: 5, icon: 'UI_EquipIcon_Pole_Kunwu', note: 'BiS' },
+      { id: '13504', name: 'Perceur prismatique', rarity: 5, icon: 'UI_EquipIcon_Pole_Kunwu', note: 'BiS' },
       { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust', note: 'F2P' },
-      { id: '13405', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Santika', note: 'Particules' },
+      { id: '13407', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Zephyrus', note: 'Particules' },
     ],
     artifacts: [
       { sets: [{ id: '15005', name: 'Blizzard Strayer', pieces: 4, icon: 'UI_RelicIcon_15005_4' }], note: 'BiS Cryo' },
@@ -1176,8 +1186,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Kaeya',
     role: 'Sub DPS Cryo',
     weapons: [
-      { id: '11510', name: 'Mistsplitter', rarity: 5, icon: 'UI_EquipIcon_Sword_Amenoma', note: 'BiS' },
-      { id: '11402', name: 'Epee de Sacrifices', rarity: 4, icon: 'UI_EquipIcon_Sword_Troupe', note: 'Reset E' },
+      { id: '11509', name: 'Reflet de tranche-brume', rarity: 5, icon: 'UI_EquipIcon_Sword_Narukami', note: 'BiS' },
+      { id: '11403', name: 'Epee rituelle', rarity: 4, icon: 'UI_EquipIcon_Sword_Fossil', note: 'Reset E' },
       { id: '11401', name: 'Epee de Favonius', rarity: 4, icon: 'UI_EquipIcon_Sword_Zephyrus', note: 'Particules' },
     ],
     artifacts: [
@@ -1193,9 +1203,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Lisa',
     role: 'Sub DPS Electro',
     weapons: [
-      { id: '14504', name: 'Kagura de la verite sacree', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kunwu', note: 'BiS' },
-      { id: '14413', name: 'Errance etoilee', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
-      { id: '14404', name: 'Thrilling Tales', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Erta', note: 'Buff ATQ' },
+      { id: '14504', name: 'Chaines mortelles', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kunwu', note: 'BiS (Lost Prayer)' },
+      { id: '14413', name: 'Contes de Dodoco', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
+      { id: '14302', name: 'Histoire des chasseurs de dragon', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Pulpfic', note: 'Buff ATQ' },
     ],
     artifacts: [
       { sets: [{ id: '15015', name: 'Fureur du tonnerre', pieces: 4, icon: 'UI_RelicIcon_15015_4' }], note: 'BiS Electro' },
@@ -1210,8 +1220,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Ningguang',
     role: 'DPS Geo',
     weapons: [
-      { id: '14504', name: 'Kagura de la verite sacree', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kunwu', note: 'BiS' },
-      { id: '14413', name: 'Errance etoilee', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
+      { id: '14504', name: 'Chaines mortelles', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kunwu', note: 'BiS (Lost Prayer)' },
+      { id: '14413', name: 'Contes de Dodoco', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15014', name: 'Eclat de jade', pieces: 4, icon: 'UI_RelicIcon_15014_4' }], note: 'BiS Geo' },
@@ -1226,9 +1236,9 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Noelle',
     role: 'DPS / Shield Geo',
     weapons: [
-      { id: '12510', name: 'Pines Redhorn', rarity: 5, icon: 'UI_EquipIcon_Claymore_Itadorimaru', note: 'BiS DEF scaling' },
-      { id: '12406', name: 'Serpent Spine', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Bon 4*' },
-      { id: '12405', name: 'Archique', rarity: 4, icon: 'UI_EquipIcon_Claymore_Lapis', note: 'F2P' },
+      { id: '12510', name: 'Brise-pierre de corne rouge', rarity: 5, icon: 'UI_EquipIcon_Claymore_Itadorimaru', note: 'BiS DEF scaling' },
+      { id: '12409', name: 'Ossature du dragon', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Bon 4*' },
+      { id: '12406', name: 'Espadon (prototype)', rarity: 4, icon: 'UI_EquipIcon_Claymore_Proto', note: 'F2P' },
     ],
     artifacts: [
       { sets: [{ id: '15022', name: 'Coquille', pieces: 4, icon: 'UI_RelicIcon_15022_4' }], note: 'BiS DEF+Geo' },
@@ -1242,8 +1252,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Dori',
     role: 'Healer Electro / Rechargeur',
     weapons: [
-      { id: '12401', name: 'Grande Epee de Favonius', rarity: 4, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'Particules' },
-      { id: '12405', name: 'Archique', rarity: 4, icon: 'UI_EquipIcon_Claymore_Lapis' },
+      { id: '12401', name: 'Espadon de Favonius', rarity: 4, icon: 'UI_EquipIcon_Claymore_Zephyrus', note: 'Particules' },
+      { id: '12406', name: 'Espadon (prototype)', rarity: 4, icon: 'UI_EquipIcon_Claymore_Proto' },
     ],
     artifacts: [
       { sets: [{ id: '15007', name: 'Ancien rituel royal', pieces: 4, icon: 'UI_RelicIcon_15007_4' }], note: 'BiS buff equipe' },
@@ -1257,8 +1267,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Yanfei',
     role: 'DPS Pyro',
     weapons: [
-      { id: '14504', name: 'Magie de l\'Etoile perdue', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kunwu', note: 'BiS' },
-      { id: '14413', name: 'Errance etoilee', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
+      { id: '14504', name: 'Chaines mortelles', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kunwu', note: 'BiS (Lost Prayer)' },
+      { id: '14413', name: 'Contes de Dodoco', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15006', name: 'Sorciere des flammes ardentes', pieces: 4, icon: 'UI_RelicIcon_15006_4' }], note: 'BiS Pyro' },
@@ -1272,8 +1282,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Freminet',
     role: 'DPS Physique / Cryo',
     weapons: [
-      { id: '12510', name: 'Pines Redhorn', rarity: 5, icon: 'UI_EquipIcon_Claymore_Itadorimaru', note: 'BiS' },
-      { id: '12406', name: 'Serpent Spine', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Excellent 4*' },
+      { id: '12510', name: 'Brise-pierre de corne rouge', rarity: 5, icon: 'UI_EquipIcon_Claymore_Itadorimaru', note: 'BiS' },
+      { id: '12409', name: 'Ossature du dragon', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Excellent 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15021', name: 'Flamme pale', pieces: 4, icon: 'UI_RelicIcon_15021_4' }], note: 'BiS Physique' },
@@ -1288,8 +1298,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Gaming',
     role: 'DPS Pyro / Plunge',
     weapons: [
-      { id: '12509', name: 'Nargecide', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'BiS' },
-      { id: '12406', name: 'Serpent Spine', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Excellent 4*' },
+      { id: '12511', name: 'Balise de la mer de roseaux', rarity: 5, icon: 'UI_EquipIcon_Claymore_Deshret', note: 'BiS' },
+      { id: '12409', name: 'Ossature du dragon', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Excellent 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15031', name: 'Chasseur de la Marechaussee', pieces: 4, icon: 'UI_RelicIcon_15031_4' }], note: 'BiS Plunge CRIT' },
@@ -1304,8 +1314,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Shikanoin Heizou',
     role: 'DPS Anemo',
     weapons: [
-      { id: '14511', name: 'Fleche Tempete', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
-      { id: '14413', name: 'Errance etoilee', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
+      { id: '14511', name: 'Mille reves flottants', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
+      { id: '14413', name: 'Contes de Dodoco', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15027', name: 'Pavilion du desert', pieces: 4, icon: 'UI_RelicIcon_15027_4' }], note: 'BiS Anemo DPS' },
@@ -1320,8 +1330,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Kaveh',
     role: 'DPS Dendro / Bloom',
     weapons: [
-      { id: '12509', name: 'Grande Epee de Lumiere', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'BiS' },
-      { id: '12405', name: 'Archique', rarity: 4, icon: 'UI_EquipIcon_Claymore_Lapis', note: 'F2P' },
+      { id: '12502', name: 'Mort-du-loup', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'BiS - buff ATQ equipe' },
+      { id: '12406', name: 'Espadon (prototype)', rarity: 4, icon: 'UI_EquipIcon_Claymore_Proto', note: 'F2P' },
     ],
     artifacts: [
       { sets: [{ id: '15025', name: 'Souvenir de foret', pieces: 4, icon: 'UI_RelicIcon_15025_4' }], note: 'BiS Dendro' },
@@ -1336,8 +1346,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Dehya',
     role: 'DPS / Tank Pyro',
     weapons: [
-      { id: '12509', name: 'Grande Epee des Cendres', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'BiS' },
-      { id: '12406', name: 'Serpent Spine', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Bon 4*' },
+      { id: '12512', name: 'Condamneur', rarity: 5, icon: 'UI_EquipIcon_Claymore_GoldenVerdict', note: 'BiS' },
+      { id: '12409', name: 'Ossature du dragon', rarity: 4, icon: 'UI_EquipIcon_Claymore_Kione', note: 'Bon 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15006', name: 'Sorciere des flammes ardentes', pieces: 4, icon: 'UI_RelicIcon_15006_4' }], note: 'DPS Pyro' },
@@ -1352,7 +1362,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Sethos',
     role: 'DPS Electro / Quicken',
     weapons: [
-      { id: '15509', name: 'Arc des Vendanges', rarity: 5, icon: 'UI_EquipIcon_Bow_Worldbane', note: 'BiS' },
+      { id: '15509', name: 'Pulsation du tonnerre', rarity: 5, icon: 'UI_EquipIcon_Bow_Narukami', note: 'BiS' },
       { id: '15401', name: 'Arc de Favonius', rarity: 4, icon: 'UI_EquipIcon_Bow_Zephyrus', note: 'Particules' },
     ],
     artifacts: [
@@ -1367,7 +1377,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Layla',
     role: 'Shielder Cryo',
     weapons: [
-      { id: '11402', name: 'Epee de Sacrifices', rarity: 4, icon: 'UI_EquipIcon_Sword_Troupe', note: 'Reset E' },
+      { id: '11403', name: 'Epee rituelle', rarity: 4, icon: 'UI_EquipIcon_Sword_Fossil', note: 'Reset E' },
       { id: '11401', name: 'Epee de Favonius', rarity: 4, icon: 'UI_EquipIcon_Sword_Zephyrus', note: 'Particules' },
     ],
     artifacts: [
@@ -1383,7 +1393,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     role: 'Sub DPS Dendro',
     weapons: [
       { id: '15401', name: 'Arc de Favonius', rarity: 4, icon: 'UI_EquipIcon_Bow_Zephyrus', note: 'Particules' },
-      { id: '15403', name: 'Prototype Crescent', rarity: 4, icon: 'UI_EquipIcon_Bow_Proto', note: 'DPS' },
+      { id: '15406', name: 'Lune paisible (prototype)', rarity: 4, icon: 'UI_EquipIcon_Bow_Proto', note: 'DPS' },
     ],
     artifacts: [
       { sets: [{ id: '15025', name: 'Souvenir de foret', pieces: 4, icon: 'UI_RelicIcon_15025_4' }], note: 'BiS Dendro shred' },
@@ -1397,8 +1407,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Aloy',
     role: 'DPS Cryo (event)',
     weapons: [
-      { id: '15502', name: 'Amos', rarity: 5, icon: 'UI_EquipIcon_Bow_Amos', note: 'BiS' },
-      { id: '15403', name: 'Prototype Crescent', rarity: 4, icon: 'UI_EquipIcon_Bow_Proto', note: 'F2P' },
+      { id: '15502', name: 'Arc d\'Amos', rarity: 5, icon: 'UI_EquipIcon_Bow_Amos', note: 'BiS' },
+      { id: '15406', name: 'Lune paisible (prototype)', rarity: 4, icon: 'UI_EquipIcon_Bow_Proto', note: 'F2P' },
     ],
     artifacts: [
       { sets: [{ id: '15005', name: 'Blizzard Strayer', pieces: 4, icon: 'UI_RelicIcon_15005_4' }], note: 'BiS Cryo' },
@@ -1412,7 +1422,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Emilie',
     role: 'Sub DPS Dendro',
     weapons: [
-      { id: '13509', name: 'Ordre des Yumkasaurs', rarity: 5, icon: 'UI_EquipIcon_Pole_Narukami', note: 'BiS' },
+      { id: '13513', name: 'Elegie de Lumidouce', rarity: 5, icon: 'UI_EquipIcon_Pole_Muguet', note: 'BiS signature' },
       { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust', note: 'F2P' },
     ],
     artifacts: [
@@ -1429,7 +1439,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     role: 'Sub DPS Electro',
     weapons: [
       { id: '15401', name: 'Arc de Favonius', rarity: 4, icon: 'UI_EquipIcon_Bow_Zephyrus', note: 'Particules' },
-      { id: '15407', name: 'Arc a poulies galvanisees', rarity: 4, icon: 'UI_EquipIcon_Bow_Exotic', note: 'DPS' },
+      { id: '15407', name: 'Arc a poulies', rarity: 4, icon: 'UI_EquipIcon_Bow_Exotic', note: 'DPS' },
     ],
     artifacts: [
       { sets: [{ id: '15026', name: 'Reve dore', pieces: 4, icon: 'UI_RelicIcon_15026_4' }], note: 'BiS Aggravate' },
@@ -1444,8 +1454,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Chiori',
     role: 'Sub DPS Geo',
     weapons: [
-      { id: '11513', name: 'Harmonie de la Brume', rarity: 5, icon: 'UI_EquipIcon_Sword_Morax', note: 'BiS' },
-      { id: '11402', name: 'Epee de Sacrifices', rarity: 4, icon: 'UI_EquipIcon_Sword_Troupe', note: '4* viable' },
+      { id: '11514', name: 'Uraku Misugiri', rarity: 5, icon: 'UI_EquipIcon_Sword_Needle', note: 'BiS signature' },
+      { id: '11403', name: 'Epee rituelle', rarity: 4, icon: 'UI_EquipIcon_Sword_Fossil', note: '4* viable' },
     ],
     artifacts: [
       { sets: [{ id: '15022', name: 'Coquille', pieces: 4, icon: 'UI_RelicIcon_15022_4' }], note: 'BiS DEF+Geo' },
@@ -1459,8 +1469,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Chasca',
     role: 'DPS Anemo / Nightsoul',
     weapons: [
-      { id: '15512', name: 'Sagesse de l\'Oiseau de Feu', rarity: 5, icon: 'UI_EquipIcon_Bow_Worldbane', note: 'BiS' },
-      { id: '15403', name: 'Prototype Crescent', rarity: 4, icon: 'UI_EquipIcon_Bow_Proto', note: 'F2P' },
+      { id: '15514', name: 'Plumage cramoisi du vautour astral', rarity: 5, icon: 'UI_EquipIcon_Bow_Qoyllorsnova', note: 'BiS signature' },
+      { id: '15406', name: 'Lune paisible (prototype)', rarity: 4, icon: 'UI_EquipIcon_Bow_Proto', note: 'F2P' },
     ],
     artifacts: [
       { sets: [{ id: '15037', name: 'Codex Obsidien', pieces: 4, icon: 'UI_RelicIcon_15037_4' }], note: 'BiS Nightsoul' },
@@ -1475,8 +1485,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Yumemizuki Mizuki',
     role: 'Support Anemo / DPS',
     weapons: [
-      { id: '14514', name: 'Reve Lunaire', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
-      { id: '14413', name: 'Errance etoilee', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
+      { id: '14514', name: 'Tome du flux eternel', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Iudex', note: 'BiS' },
+      { id: '14413', name: 'Contes de Dodoco', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15002', name: 'Ombre de la Verte Chasseuse', pieces: 4, icon: 'UI_RelicIcon_15002_4' }], note: 'VV shred' },
@@ -1492,7 +1502,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     role: 'Support Geo / Tank',
     weapons: [
       { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust', note: 'F2P' },
-      { id: '13405', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Santika', note: 'Particules' },
+      { id: '13407', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Zephyrus', note: 'Particules' },
     ],
     artifacts: [
       { sets: [{ id: '15017', name: 'Tenacite du Millelithe', pieces: 4, icon: 'UI_RelicIcon_15017_4' }], note: 'Buff ATQ equipe' },
@@ -1506,7 +1516,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Escoffier',
     role: 'Support Cryo / Buffer',
     weapons: [
-      { id: '13405', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Santika', note: 'Particules' },
+      { id: '13407', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Zephyrus', note: 'Particules' },
       { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust' },
     ],
     artifacts: [
@@ -1523,8 +1533,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Lan Yan',
     role: 'Support Anemo / VV',
     weapons: [
-      { id: '14414', name: 'Prototype Amber', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Truelens', note: 'F2P' },
-      { id: '14404', name: 'Thrilling Tales', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Erta', note: 'Buff ATQ' },
+      { id: '14406', name: 'Malice (prototype)', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Proto', note: 'F2P' },
+      { id: '14302', name: 'Histoire des chasseurs de dragon', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Pulpfic', note: 'Buff ATQ' },
     ],
     artifacts: [
       { sets: [{ id: '15002', name: 'Ombre de la Verte Chasseuse', pieces: 4, icon: 'UI_RelicIcon_15002_4' }], note: 'VV shred' },
@@ -1538,8 +1548,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Varesa',
     role: 'DPS Electro / Plunge',
     weapons: [
-      { id: '14514', name: 'Flamme de l\'Eclair', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
-      { id: '14413', name: 'Errance etoilee', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
+      { id: '14514', name: 'Tome du flux eternel', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Iudex', note: 'BiS' },
+      { id: '14413', name: 'Contes de Dodoco', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15037', name: 'Codex Obsidien', pieces: 4, icon: 'UI_RelicIcon_15037_4' }], note: 'BiS Nightsoul' },
@@ -1554,7 +1564,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Iansan',
     role: 'Support Electro / Buffer',
     weapons: [
-      { id: '13405', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Santika', note: 'Particules' },
+      { id: '13407', name: 'Lance de Favonius', rarity: 4, icon: 'UI_EquipIcon_Pole_Zephyrus', note: 'Particules' },
       { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust' },
     ],
     artifacts: [
@@ -1569,8 +1579,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Ifa',
     role: 'Support Anemo / Heal',
     weapons: [
-      { id: '14414', name: 'Prototype Amber', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Truelens', note: 'F2P heal' },
-      { id: '14404', name: 'Thrilling Tales', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Erta', note: 'Buff ATQ' },
+      { id: '14406', name: 'Malice (prototype)', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Proto', note: 'F2P heal' },
+      { id: '14302', name: 'Histoire des chasseurs de dragon', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Pulpfic', note: 'Buff ATQ' },
     ],
     artifacts: [
       { sets: [{ id: '15002', name: 'Ombre de la Verte Chasseuse', pieces: 4, icon: 'UI_RelicIcon_15002_4' }], note: 'VV shred' },
@@ -1586,7 +1596,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Ineffa',
     role: 'DPS Electro',
     weapons: [
-      { id: '13509', name: 'Transfixion Foudre', rarity: 5, icon: 'UI_EquipIcon_Pole_Narukami', note: 'BiS' },
+      { id: '13509', name: 'Lumiere du faucheur', rarity: 5, icon: 'UI_EquipIcon_Pole_Narukami', note: 'BiS' },
       { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust', note: 'F2P' },
     ],
     artifacts: [
@@ -1602,7 +1612,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Flins',
     role: 'DPS Electro / Nightsoul',
     weapons: [
-      { id: '13509', name: 'Eclat du Ciel', rarity: 5, icon: 'UI_EquipIcon_Pole_Narukami', note: 'BiS' },
+      { id: '13509', name: 'Lumiere du faucheur', rarity: 5, icon: 'UI_EquipIcon_Pole_Narukami', note: 'BiS' },
       { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust', note: 'F2P' },
     ],
     artifacts: [
@@ -1617,8 +1627,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Lauma',
     role: 'Support / DPS Dendro',
     weapons: [
-      { id: '14511', name: 'Lumiere Forestiere', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
-      { id: '14404', name: 'Thrilling Tales', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Erta', note: 'Buff ATQ' },
+      { id: '14511', name: 'Mille reves flottants', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
+      { id: '14302', name: 'Histoire des chasseurs de dragon', rarity: 3, icon: 'UI_EquipIcon_Catalyst_Pulpfic', note: 'Buff ATQ' },
     ],
     artifacts: [
       { sets: [{ id: '15025', name: 'Souvenir de foret', pieces: 4, icon: 'UI_RelicIcon_15025_4' }], note: 'BiS Dendro' },
@@ -1633,8 +1643,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Skirk',
     role: 'DPS Cryo',
     weapons: [
-      { id: '11515', name: 'Epee du Vide', rarity: 5, icon: 'UI_EquipIcon_Sword_Morax', note: 'BiS' },
-      { id: '11509', name: 'Haran Geppaku Futsu', rarity: 5, icon: 'UI_EquipIcon_Sword_Narukami' },
+      { id: '11515', name: 'Absolution', rarity: 5, icon: 'UI_EquipIcon_Sword_Estoc', note: 'BiS' },
+      { id: '11509', name: 'Reflet de tranche-brume', rarity: 5, icon: 'UI_EquipIcon_Sword_Narukami' },
     ],
     artifacts: [
       { sets: [{ id: '15005', name: 'Blizzard Strayer', pieces: 4, icon: 'UI_RelicIcon_15005_4' }], note: 'BiS Cryo' },
@@ -1648,8 +1658,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Varka',
     role: 'DPS Anemo',
     weapons: [
-      { id: '12509', name: 'Grand Souffle', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'BiS' },
-      { id: '12506', name: 'Orgueil du Ciel', rarity: 5, icon: 'UI_EquipIcon_Claymore_Dvalin' },
+      { id: '12515', name: 'Geste du loup puissant', rarity: 5, icon: 'UI_EquipIcon_Claymore_EnsisAquilonis', note: 'BiS (si sorti)' },
+      { id: '12501', name: 'Fierte de la Voute d\'Azur', rarity: 5, icon: 'UI_EquipIcon_Claymore_Dvalin' },
     ],
     artifacts: [
       { sets: [{ id: '15001', name: 'Finale de Gladiateur', pieces: 4, icon: 'UI_RelicIcon_15001_4' }], note: 'BiS DPS' },
@@ -1665,8 +1675,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Aino',
     role: 'DPS / Support Hydro',
     weapons: [
-      { id: '12509', name: 'Tide du Nord', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'BiS' },
-      { id: '12405', name: 'Archique', rarity: 4, icon: 'UI_EquipIcon_Claymore_Lapis', note: 'F2P' },
+      { id: '12502', name: 'Mort-du-loup', rarity: 5, icon: 'UI_EquipIcon_Claymore_Wolfmound', note: 'BiS' },
+      { id: '12406', name: 'Espadon (prototype)', rarity: 4, icon: 'UI_EquipIcon_Claymore_Proto', note: 'F2P' },
     ],
     artifacts: [
       { sets: [{ id: '15018', name: 'Coeur des profondeurs', pieces: 4, icon: 'UI_RelicIcon_15018_4' }], note: 'BiS Hydro' },
@@ -1696,8 +1706,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Columbina',
     role: 'DPS Hydro',
     weapons: [
-      { id: '14514', name: 'Chant de l\'Abime', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
-      { id: '14506', name: 'Serment du vent et de la pluie', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kaleido' },
+      { id: '14514', name: 'Tome du flux eternel', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Iudex', note: 'BiS' },
+      { id: '14506', name: 'Lueur de la lune eternelle', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Kaleido' },
     ],
     artifacts: [
       { sets: [{ id: '15031', name: 'Chasseur de la Marechaussee', pieces: 4, icon: 'UI_RelicIcon_15031_4' }], note: 'BiS DPS' },
@@ -1711,7 +1721,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Durin',
     role: 'DPS Pyro',
     weapons: [
-      { id: '11515', name: 'Griffe du Dragon', rarity: 5, icon: 'UI_EquipIcon_Sword_Morax', note: 'BiS' },
+      { id: '11515', name: 'Absolution', rarity: 5, icon: 'UI_EquipIcon_Sword_Estoc', note: 'BiS' },
       { id: '11401', name: 'Epee de Favonius', rarity: 4, icon: 'UI_EquipIcon_Sword_Zephyrus', note: 'F2P' },
     ],
     artifacts: [
@@ -1726,8 +1736,8 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Nefer',
     role: 'DPS / Support Dendro',
     weapons: [
-      { id: '14511', name: 'Codex des Reves', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
-      { id: '14413', name: 'Errance etoilee', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
+      { id: '14511', name: 'Mille reves flottants', rarity: 5, icon: 'UI_EquipIcon_Catalyst_Ayus', note: 'BiS' },
+      { id: '14413', name: 'Contes de Dodoco', rarity: 4, icon: 'UI_EquipIcon_Catalyst_Ludiharpastum', note: 'Bon 4*' },
     ],
     artifacts: [
       { sets: [{ id: '15025', name: 'Souvenir de foret', pieces: 4, icon: 'UI_RelicIcon_15025_4' }], note: 'BiS Dendro' },
@@ -1741,7 +1751,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Illuga',
     role: 'DPS Geo',
     weapons: [
-      { id: '13509', name: 'Pilier de Roche', rarity: 5, icon: 'UI_EquipIcon_Pole_Narukami', note: 'BiS' },
+      { id: '13509', name: 'Lumiere du faucheur', rarity: 5, icon: 'UI_EquipIcon_Pole_Narukami', note: 'BiS' },
       { id: '13401', name: 'Dragon de l\'ancien pacte', rarity: 4, icon: 'UI_EquipIcon_Pole_Stardust', note: 'F2P' },
     ],
     artifacts: [
@@ -1757,7 +1767,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     role: 'Support / DPS Anemo',
     weapons: [
       { id: '15401', name: 'Arc de Favonius', rarity: 4, icon: 'UI_EquipIcon_Bow_Zephyrus', note: 'Particules' },
-      { id: '15407', name: 'Arc a poulies galvanisees', rarity: 4, icon: 'UI_EquipIcon_Bow_Exotic', note: 'DPS' },
+      { id: '15407', name: 'Arc a poulies', rarity: 4, icon: 'UI_EquipIcon_Bow_Exotic', note: 'DPS' },
     ],
     artifacts: [
       { sets: [{ id: '15002', name: 'Ombre de la Verte Chasseuse', pieces: 4, icon: 'UI_RelicIcon_15002_4' }], note: 'VV shred' },
@@ -1771,7 +1781,7 @@ export const GENSHIN_BUILDS: CharacterBuild[] = [
     name: 'Zibai',
     role: 'DPS Geo',
     weapons: [
-      { id: '11515', name: 'Epee de Cristal', rarity: 5, icon: 'UI_EquipIcon_Sword_Morax', note: 'BiS' },
+      { id: '11515', name: 'Absolution', rarity: 5, icon: 'UI_EquipIcon_Sword_Estoc', note: 'BiS' },
       { id: '11412', name: 'Amenoma Kageuchi', rarity: 4, icon: 'UI_EquipIcon_Sword_Bakufu', note: 'Bon 4*' },
     ],
     artifacts: [
